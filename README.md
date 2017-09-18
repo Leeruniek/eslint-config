@@ -1,8 +1,8 @@
 # JavaScript ESLint rules
 
-[![npm package version](https://badge.fury.io/js/%40codemachiner%2Feslint-config.svg)](https://badge.fury.io/js/%40codemachiner%2Feslint-config)
-[![](https://david-dm.org/codemachiner/eslint-config/dev-status.svg)](https://david-dm.org/codemachiner/eslint-config?type=dev)
-[![](https://david-dm.org/codemachiner/eslint-config/peer-status.svg)](https://david-dm.org/codemachiner/eslint-config?type=peer)
+[![npm package version](https://badge.fury.io/js/%40leeruniek%2Feslint-config.svg)](https://badge.fury.io/js/%40leeruniek%2Feslint-config)
+[![](https://david-dm.org/leeruniek/eslint-config/dev-status.svg)](https://david-dm.org/leeruniek/eslint-config?type=dev)
+[![](https://david-dm.org/leeruniek/eslint-config/peer-status.svg)](https://david-dm.org/leeruniek/eslint-config?type=peer)
 
 > JavaScript ESLint bundle with best practices and common use rules for writing more consistent code.
 >
@@ -48,10 +48,10 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 Requires ESLint >= 4.0.0
 
 ```bash
-npm i eslint @codemachiner/eslint-config --save-dev
+npm i eslint @leeruniek/eslint-config --save-dev
 ```
 
-Run `npm info "@codemachiner/eslint-config@latest" peerDependencies` to get the dev packages you need to include in your own `package.json`.
+Run `npm info "@leeruniek/eslint-config@latest" peerDependencies` to get the dev packages you need to include in your own `package.json`.
 
 It should be something like this:
 
@@ -68,19 +68,19 @@ It should be something like this:
 ...
 ```
 
-Add `@codemachiner/eslint-config/rules/frontend` (or `/backend`) to the extends section of your `.eslintrc` configuration file:
+Add `@leeruniek/eslint-config/rules/frontend` (or `/backend`) to the extends section of your `.eslintrc` configuration file:
 
 ```json
 {
     "extends": [
-        "@codemachiner/eslint-config/rules/frontend",
+        "@leeruniek/eslint-config/rules/frontend",
     ]
 }
 ```
 
 ## Rule sets
 
-[`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) and [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) files are just bundles, each loading it's specific set of rule files.
+[`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) and [`backend`](https://github.com/leeruniek/eslint-config/blob/master/rules/backend.js) files are just bundles, each loading it's specific set of rule files.
 
 ```text
 ...
@@ -116,28 +116,28 @@ Add `@codemachiner/eslint-config/rules/frontend` (or `/backend`) to the extends 
 
 Support for ES2015+ (ES6+) import/export syntax.  
 
-- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
-- rules in [`@codemachiner/eslint-config/rules/import`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js)
+- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/leeruniek/eslint-config/blob/master/rules/backend.js) bundles
+- rules in [`@leeruniek/eslint-config/rules/import`](https://github.com/leeruniek/eslint-config/blob/master/rules/import.js)
 
 ### [json](https://www.npmjs.org/package/eslint-plugin-json)
 
 Lint JSON files.
 
-- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
+- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/leeruniek/eslint-config/blob/master/rules/backend.js) bundles
 
 ### [promise](https://www.npmjs.org/package/eslint-plugin-promise)
 
 Enforce best practices for JavaScript promises.
 
-- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
-- rules in [`@codemachiner/eslint-config/rules/promise`](https://github.com/codemachiner/eslint-config/blob/master/rules/promise.js)
+- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/leeruniek/eslint-config/blob/master/rules/backend.js) bundles
+- rules in [`@leeruniek/eslint-config/rules/promise`](https://github.com/leeruniek/eslint-config/blob/master/rules/promise.js)
 
 ### [unicorn](https://www.npmjs.org/package/eslint-plugin-unicorn)
 
 Various awesome ESLint rules.
 
-- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
-- rules in [`@codemachiner/eslint-config/rules/unicorn`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js)
+- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/leeruniek/eslint-config/blob/master/rules/backend.js) bundles
+- rules in [`@leeruniek/eslint-config/rules/unicorn`](https://github.com/leeruniek/eslint-config/blob/master/rules/unicorn.js)
 
 ### [flowtype](https://www.npmjs.org/package/eslint-plugin-flowtype) & [flowtype-errors](https://www.npmjs.org/package/eslint-plugin-flowtype-errors)
 
@@ -149,29 +149,29 @@ Various awesome ESLint rules.
     ```js
     ...
     "extends": [
-        "@codemachiner/eslint-config/rules/frontend",
-        "@codemachiner/eslint-config/rules/flow",
+        "@leeruniek/eslint-config/rules/frontend",
+        "@leeruniek/eslint-config/rules/flow",
     ],
     ...
     ```
 
-- rules in [`@codemachiner/eslint-config/rules/flow`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js)
+- rules in [`@leeruniek/eslint-config/rules/flow`](https://github.com/leeruniek/eslint-config/blob/master/rules/flow.js)
 
 ### [html](https://www.npmjs.org/package/eslint-plugin-html)
 
 Allows linting and fixing inline scripts contained in HTML files.
 
 - not in peerDependencies: `npm install --save-dev eslint-plugin-html`
-- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
-- rules in [`@codemachiner/eslint-config/rules/html`](https://github.com/codemachiner/eslint-config/blob/master/rules/html.js)
+- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) bundle
+- rules in [`@leeruniek/eslint-config/rules/html`](https://github.com/leeruniek/eslint-config/blob/master/rules/html.js)
 
 ### [react](https://www.npmjs.org/package/eslint-plugin-react)
 
 React specific linting rules.
 
 - not in peerDependencies: `npm install --save-dev eslint-plugin-react`
-- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
-- rules in [`@codemachiner/eslint-config/rules/react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js)
+- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) bundle
+- rules in [`@leeruniek/eslint-config/rules/react`](https://github.com/leeruniek/eslint-config/blob/master/rules/react.js)
 
 ### [compat](https://www.npmjs.org/package/eslint-plugin-compat)
 
@@ -186,8 +186,8 @@ Lint the browser compatibility of your code (using [caniuse](http://caniuse.com/
 ```
 
 - not in peerDependencies: `npm install --save-dev eslint-plugin-compat`
-- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
-- rules in [`@codemachiner/eslint-config/rules/compat`](https://github.com/codemachiner/eslint-config/blob/master/rules/compat.js)
+- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) bundle
+- rules in [`@leeruniek/eslint-config/rules/compat`](https://github.com/leeruniek/eslint-config/blob/master/rules/compat.js)
 
 ### [jest](https://www.npmjs.org/package/eslint-plugin-jest)
 
@@ -198,19 +198,19 @@ Lint the browser compatibility of your code (using [caniuse](http://caniuse.com/
     ```js
     ...
     "extends": [
-        "@codemachiner/eslint-config/rules/frontend",
-        "@codemachiner/eslint-config/rules/jest",
+        "@leeruniek/eslint-config/rules/frontend",
+        "@leeruniek/eslint-config/rules/jest",
     ],
     ...
     ```
-- rules in [`@codemachiner/eslint-config/rules/jest`](https://github.com/codemachiner/eslint-config/blob/master/rules/jest.js)
+- rules in [`@leeruniek/eslint-config/rules/jest`](https://github.com/leeruniek/eslint-config/blob/master/rules/jest.js)
 
 ### [no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name)
 
 In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead.
 This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
 
-- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/codemachiner/eslint-config/blob/master/rules/backend.js) bundles
+- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/leeruniek/eslint-config/blob/master/rules/backend.js) bundles
 
 ## Using with SublimeText
 
@@ -325,7 +325,7 @@ module.exports = {
     root  : true,
     parser: "babel-eslint",
 
-    extends: [ "@codemachiner/eslint-config/rules/frontend" ],
+    extends: [ "@leeruniek/eslint-config/rules/frontend" ],
 
     settings: {
         // Use webpack to resolve modules in imports
@@ -370,7 +370,7 @@ module.exports = {
 
 ## Changelog
 
-History of all changes in [CHANGELOG.md](https://github.com/codemachiner/eslint-config/blob/master/CHANGELOG.md)
+History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-config/blob/master/CHANGELOG.md)
 
 ## 2.7.2 - 18 August 2017
 
@@ -378,8 +378,8 @@ Removed Flow from both bundles, need to be loaded separately.
 
 ### Added
 
-- React [`boolean-prop-naming`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L85), [`no-typos`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L93) and [`jsx-boolean-value`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L40)
+- React [`boolean-prop-naming`](https://github.com/leeruniek/eslint-config/blob/master/rules/react.js#L85), [`no-typos`](https://github.com/leeruniek/eslint-config/blob/master/rules/react.js#L93) and [`jsx-boolean-value`](https://github.com/leeruniek/eslint-config/blob/master/rules/react.js#L40)
 
 ### Changed
 
-- Removed [`flow`](https://github.com/codemachiner/eslint-config/blob/master/rules/flow.js) from both bundles. Need to include it [separately](https://github.com/codemachiner/eslint-config#flowtype--flowtype-errors)
+- Removed [`flow`](https://github.com/leeruniek/eslint-config/blob/master/rules/flow.js) from both bundles. Need to include it [separately](https://github.com/leeruniek/eslint-config#flowtype--flowtype-errors)

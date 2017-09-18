@@ -1,5 +1,5 @@
 {
-  "name": "@codemachiner/eslint-config",
+  "name": "@leeruniek/eslint-config",
   "version": "2.7.2",
   "description": "JavaScript ESLint rules",
   "main": "rules/frontend.js",
@@ -13,13 +13,13 @@
     "prepare": "npm run lint && npm run flow",
     "preversion": "npm run prepare"
   },
-  "homepage": "https://github.com/codemachiner/eslint-config",
+  "homepage": "https://github.com/leeruniek/eslint-config",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codemachiner/eslint-config.git"
+    "url": "git+https://github.com/leeruniek/eslint-config.git"
   },
   "bugs": {
-    "url": "https://github.com/codemachiner/eslint-config/issues"
+    "url": "https://github.com/leeruniek/eslint-config/issues"
   },
   "keywords": [
     "eslint",
@@ -31,9 +31,9 @@
     "config",
     "jest",
     "javascript",
-    "codemachiner"
+    "leeruniek"
   ],
-  "author": "Andrei Dumitrescu <andrei@codemachiner.com> (https://twitter.com/andreidcm)",
+  "author": "Andrei Dumitrescu <andrei@leeruniek.nl> (https://twitter.com/andreidcm)",
   "dependencies": {},
   "devDependencies": {
     "eslint": "4.4.1",
