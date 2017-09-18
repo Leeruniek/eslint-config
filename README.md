@@ -37,8 +37,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Reading](#reading)
 - [Changelog](#changelog)
-- [2.7.2 - 18 August 2017](#272---18-august-2017)
-    - [Added](#added)
+- [2.8.0 - 18 September 2017](#280---18-september-2017)
     - [Changed](#changed)
 
 <!-- /MarkdownTOC -->
@@ -58,7 +57,7 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^4.4.1",
+    "eslint": "^4.7.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
@@ -372,14 +371,10 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.7.2 - 18 August 2017
+## 2.8.0 - 18 September 2017
 
-Removed Flow from both bundles, need to be loaded separately.
-
-### Added
-
-- React [`boolean-prop-naming`](https://github.com/leeruniek/eslint-config/blob/master/rules/react.js#L85), [`no-typos`](https://github.com/leeruniek/eslint-config/blob/master/rules/react.js#L93) and [`jsx-boolean-value`](https://github.com/leeruniek/eslint-config/blob/master/rules/react.js#L40)
+Updated main packages (`eslint` & `flow-bin`) & others that kept up with eslint 4.7 update
 
 ### Changed
 
-- Removed [`flow`](https://github.com/leeruniek/eslint-config/blob/master/rules/flow.js) from both bundles. Need to include it [separately](https://github.com/leeruniek/eslint-config#flowtype--flowtype-errors)
+- [`package.json`](https://github.com/codemachiner/eslint-config/blob/master/package.json)

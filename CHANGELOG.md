@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.8.0] - 18 September 2017
+
+Updated main packages (`eslint` & `flow-bin`) & others that kept up with eslint 4.7 update
+
+### Changed
+
+- [`package.json`](https://github.com/codemachiner/eslint-config/blob/master/package.json)
+
 ## [2.7.2] - 18 August 2017
 
 Removed Flow from both bundles, need to be loaded separately
@@ -164,7 +172,8 @@ React support
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.7.2...HEAD
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.8.0...HEAD
+[2.8.0]: https://github.com/codemachiner/eslint-rules/compare/v2.7.2...v2.8.0
 [2.7.2]: https://github.com/codemachiner/eslint-rules/compare/v2.7.1...v2.7.2
 [2.7.1]: https://github.com/codemachiner/eslint-rules/compare/v2.6.0...v2.7.1
 [2.6.0]: https://github.com/codemachiner/eslint-rules/compare/v2.5.1...v2.6.0
