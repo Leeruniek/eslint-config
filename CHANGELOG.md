@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.8.3] - 24 September 2017
+
+### Changed
+
+- updated [`react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js) rules with:
+    - [`react/sort-comp`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L252) - predefined order of component methods (eslint-react [rule](https://github.com/yannickcr/eslint-plugin-react/blob/HEAD/docs/rules/sort-comp.md))
+    - [`react/jsx-no-bind`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L306) - no longer bind function in render (eslint-react [rule](https://github.com/yannickcr/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-bind.md))
+
 ## [2.8.2] - 24 September 2017
 
 ### Changed
@@ -186,7 +194,8 @@ React support
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.8.2...HEAD
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.8.3...HEAD
+[2.8.3]: https://github.com/codemachiner/eslint-rules/compare/v2.8.2...v2.8.3
 [2.8.2]: https://github.com/codemachiner/eslint-rules/compare/v2.8.1...v2.8.2
 [2.8.1]: https://github.com/codemachiner/eslint-rules/compare/v2.8.0...v2.8.1
 [2.8.0]: https://github.com/codemachiner/eslint-rules/compare/v2.7.2...v2.8.0

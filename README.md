@@ -38,7 +38,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Reading](#reading)
 - [Changelog](#changelog)
-- [2.8.2 - 24 September 2017](#282---24-september-2017)
+- [2.8.3 - 24 September 2017](#283---24-september-2017)
     - [Changed](#changed)
 
 <!-- /MarkdownTOC -->
@@ -380,8 +380,10 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.8.2 - 24 September 2017
+## 2.8.3 - 24 September 2017
 
 ### Changed
 
-- updated [`react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L125) with more jsx style rules
+- updated [`react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js) rules with:
+    - [`react/sort-comp`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L252) - predefined order of component methods (eslint-react [rule](https://github.com/yannickcr/eslint-plugin-react/blob/HEAD/docs/rules/sort-comp.md))
+    - [`react/jsx-no-bind`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L306) - no longer bind function in render (eslint-react [rule](https://github.com/yannickcr/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-bind.md))

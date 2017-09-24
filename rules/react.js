@@ -177,7 +177,7 @@ module.exports = {
          */
         "react/jsx-handler-names": [
             "error", {
-                eventHandlerPrefix    : "handle",
+                eventHandlerPrefix    : "_?handle",
                 eventHandlerPropPrefix: "on",
             },
         ],
@@ -232,6 +232,78 @@ module.exports = {
          * refactoring problem.
          */
         "react/default-props-match-prop-types": "error",
+
+        /*
+         * Components without children can be self-closed to avoid unnecessary
+         * extra closing tag.
+         */
+        "react/self-closing-comp": [
+            "error", {
+                component: true,
+                html     : true,
+            },
+        ],
+
+        /*
+         * When creating React components it is more convenient to always
+         * follow the same organisation for method order to help you easily
+         * find lifecyle methods, event handlers, etc.
+         */
+        "react/sort-comp": [
+            "error", {
+                order: [
+                    "init",
+                    "rendering",
+
+                    // all that remains is static-methods. if static-methods
+                    // are after render then the static propTypes that we want
+                    // before render will throw an error
+                    "everything-else",
+                    "lifecycle",
+                    "/^on.+$/",
+                    "/^(_?)handle.+$/",
+                ],
+                groups: {
+                    init: [
+                        "displayName",
+                        "propTypes",
+                        "defaultProps",
+                        "state",
+                        "contextTypes",
+                        "childContextTypes",
+                        "statics",
+                        "constructor",
+                    ],
+                    rendering: [
+                        "render",
+                        "/^_?render.+$/",
+                    ],
+                    lifecycle: [
+                        "mixins",
+                        "getDefaultProps",
+                        "getInitialState",
+                        "getChildContext",
+                        "componentWillMount",
+                        "componentDidMount",
+                        "componentWillReceiveProps",
+                        "shouldComponentUpdate",
+                        "componentWillUpdate",
+                        "componentDidUpdate",
+                        "componentWillUnmount",
+                    ],
+                },
+            },
+        ],
+
+        /*
+         * A bind call or arrow function in a JSX prop will create a brand new
+         * function on every single render. This is bad for performance, as it
+         * will result in the garbage collector being invoked way more than is
+         * necessary. It may also cause unnecessary re-renders if a brand new
+         * function is passed as a prop to a component that uses reference
+         * equality check on the prop to determine if it should update.
+         */
+        "react/jsx-no-bind": "error",
 
         /*
          * Choose tag is empty or does not have at least one When
