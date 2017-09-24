@@ -9,13 +9,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [2.8.0] - 18 September 2017
-
-Updated main packages (`eslint` & `flow-bin`) & others that kept up with eslint 4.7 update
+## [2.8.2] - 24 September 2017
 
 ### Changed
 
-- [`package.json`](https://github.com/codemachiner/eslint-config/blob/master/package.json)
+- updated [`react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L125) with more jsx style rules
+
+## [2.8.1] - 23 September 2017
+
+Updated packages & added `eslint-plugin-jsx-control-statements`
+
+### Added
+
+- New [`jsx-control-statements`](https://github.com/codemachiner/eslint-config#jsx-control-statements) to the [react](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L104) rules.
+
+### Changed
+
+- [`react/jsx-no-undef`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L36) - from v7, `eslint-plugin-react` does not check globals by default anymore and need to be set explicitly.
+
+## [2.8.0] - 18 September 2017
+
+Updated main packages (`eslint` & `flow-bin`) & others that kept up with eslint 4.7 update
 
 ## [2.7.2] - 18 August 2017
 
@@ -172,7 +186,9 @@ React support
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.8.0...HEAD
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.8.2...HEAD
+[2.8.2]: https://github.com/codemachiner/eslint-rules/compare/v2.8.1...v2.8.2
+[2.8.1]: https://github.com/codemachiner/eslint-rules/compare/v2.8.0...v2.8.1
 [2.8.0]: https://github.com/codemachiner/eslint-rules/compare/v2.7.2...v2.8.0
 [2.7.2]: https://github.com/codemachiner/eslint-rules/compare/v2.7.1...v2.7.2
 [2.7.1]: https://github.com/codemachiner/eslint-rules/compare/v2.6.0...v2.7.1
