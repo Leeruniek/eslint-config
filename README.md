@@ -38,7 +38,8 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Reading](#reading)
 - [Changelog](#changelog)
-- [2.8.3 - 24 September 2017](#283---24-september-2017)
+- [2.9.1 - 17 October 2017](#291---17-october-2017)
+    - [Added](#added)
     - [Changed](#changed)
 
 <!-- /MarkdownTOC -->
@@ -58,11 +59,11 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^4.7.2",
+    "eslint": "^4.9.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
-    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-unicorn": "^2.1.2"
 }
 ...
@@ -380,10 +381,17 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.8.3 - 24 September 2017
+## 2.9.1 - 17 October 2017
+
+### Added
+
+- [`import/ignore`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js#L11) to ignore css/scss/sass files
+- [`import/extensions`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js#L77) `.js` and `['.js', '.jsx']` if [react](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L361) is loaded.
 
 ### Changed
 
-- updated [`react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js) rules with:
-    - [`react/sort-comp`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L252) - predefined order of component methods (eslint-react [rule](https://github.com/yannickcr/eslint-plugin-react/blob/HEAD/docs/rules/sort-comp.md))
-    - [`react/jsx-no-bind`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L306) - no longer bind function in render (eslint-react [rule](https://github.com/yannickcr/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-bind.md))
+- [`react/jsx-no-comment-textnodes`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L30)
+- [`object-property-newline`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js#L250)
+- [`no-multi-spaces`](https://github.com/codemachiner/eslint-config/blob/master/rules/best.practices.js#L115)
+- [`no-unused-vars`](https://github.com/codemachiner/eslint-config/blob/master/rules/variables.js#L42)
+- [`space-before-function-paren`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js#L329)
