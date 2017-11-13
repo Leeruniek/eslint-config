@@ -38,7 +38,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Reading](#reading)
 - [Changelog](#changelog)
-- [2.9.1 - 17 October 2017](#291---17-october-2017)
+- [2.9.2 - 12 November 2017](#292---12-november-2017)
     - [Added](#added)
     - [Changed](#changed)
 
@@ -59,12 +59,12 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^4.9.0",
-    "eslint-plugin-import": "^2.7.0",
+    "eslint": "^4.11.0",
+    "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
     "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-unicorn": "^2.1.2"
+    "eslint-plugin-unicorn": "^3.0.0"
 }
 ...
 ```
@@ -381,17 +381,14 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.9.1 - 17 October 2017
+## 2.9.2 - 12 November 2017
 
 ### Added
 
-- [`import/ignore`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js#L11) to ignore css/scss/sass files
-- [`import/extensions`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js#L77) `.js` and `['.js', '.jsx']` if [react](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L361) is loaded.
+- configed all [`rules/unicorn`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js), not just `fileCase`
+- [`import/exports-last`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js#L86) - all exports are declared at the bottom of the file
+- [`jest/prefer-to-have-length`](https://github.com/codemachiner/eslint-config/blob/master/rules/jest.js#L50) - use `toHaveLength`, not check `.length`
 
 ### Changed
 
-- [`react/jsx-no-comment-textnodes`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L30)
-- [`object-property-newline`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js#L250)
-- [`no-multi-spaces`](https://github.com/codemachiner/eslint-config/blob/master/rules/best.practices.js#L115)
-- [`no-unused-vars`](https://github.com/codemachiner/eslint-config/blob/master/rules/variables.js#L42)
-- [`space-before-function-paren`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js#L329)
+- [`no-unused-expressions`](https://github.com/codemachiner/eslint-config/blob/master/rules/best-practices.js#L176)

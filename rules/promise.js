@@ -13,10 +13,10 @@ module.exports = {
     /*
      * Ensure that inside a then() you make sure to return a new promise
      * or value.
-     * 
+     *
      * http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html
      * (rule #5) for more info on why that's a good idea.
-     * 
+     *
      * We also allow someone to throw inside a then() which is essentially
      * the same as return Promise.reject().
      */

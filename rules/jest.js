@@ -42,5 +42,11 @@ module.exports = {
      * actual expectation made.
      */
     "jest/valid-expect": "error",
+
+    /*
+     * In order to have a better failure message, toHaveLength() should be
+     * used upon asserting expectations on object's length property.
+     */
+    "jest/prefer-to-have-length": "error",
   },
 }

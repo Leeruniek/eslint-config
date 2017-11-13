@@ -40,7 +40,7 @@ module.exports = {
      * JavaScript code only if there is no type attribute or if its value
      * matches the pattern:
      * /^(application|text)\/(x-)?(javascript|babel|ecmascript-6)$/i
-     * 
+     *
      * You can customize the types that should be considered as JavaScript
      * by providing one or multiple MIME types. If a MIME type starts with
      * a /, it will be considered as a regular expression.

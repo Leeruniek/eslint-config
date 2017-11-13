@@ -52,7 +52,7 @@ module.exports = {
 
     /*
      * Prefer destructuring from arrays and objects
-     * 
+     *
      * With JavaScript ES6, a new syntax was added for creating variables
      * from an array index or object property, called destructuring. This
      * rule enforces usage of destructuring instead of accessing a

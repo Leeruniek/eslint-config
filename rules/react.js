@@ -225,7 +225,7 @@ module.exports = {
     /*
      * This rule aims to ensure that any defaultProp has a non-required
      * PropType declaration.
-     * 
+     *
      * Having defaultProps for non-existent propTypes is likely the result
      * of errors in refactoring or a sign of a missing propType. Having a
      * defaultProp for a required property similarly indicates a possible

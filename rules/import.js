@@ -77,5 +77,12 @@ module.exports = {
     "import/extensions": [ "error", "always", {
       js: "never",
     } ],
+
+    /*
+     * Enforces that all exports are declared at the bottom of the file.
+     * This rule will report any export declarations that comes before any
+     * non-export statements.
+     */
+    "import/exports-last": "error",
   },
 }

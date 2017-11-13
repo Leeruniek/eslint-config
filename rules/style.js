@@ -31,10 +31,10 @@ module.exports = {
      *      - If a variable with a designated name is declared, it must be
      *      either initialized (in the declaration) or assigned (in the
      *      same scope as the declaration) the value this.
-     * 
+     *
      *      - If a variable is initialized or assigned the value this, the
      *      name of the variable must be a designated alias.
-     * 
+     *
      *  With arrow functions this should not matter and pattern not be
      *  used anymore.
      */
@@ -54,12 +54,12 @@ module.exports = {
 
     /*
      * Require or disallow named function expressions
-     * 
+     *
      * A pattern that’s becoming more common is to give function
      * expressions names to aid in debugging. For example:
-     * 
+     *
      * Foo.prototype.bar = function bar() {};
-     * 
+     *
      * Adding the second bar in the above example is optional. If you
      * leave off the function name then when the function throws an
      * exception you are likely to get something similar to anonymous
@@ -73,12 +73,12 @@ module.exports = {
      * "There are only two hard things in Computer Science:
      * cache invalidation and naming things."
      * — Phil Karlton
-     * 
+     *
      * Bad names can lead to hard-to-decipher code. Generic names, such as
      * data, don’t infer much about the code and the values it receives.
      * This rule allows you to configure a blacklist of bad identifier
      * names, that you don’t want to see in your code.
-     * 
+     *
      * Removing "data" because VueJS
      */
     "id-blacklist": [ "error", "err", "e", "cb", "callback" ],
