@@ -38,7 +38,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Reading](#reading)
 - [Changelog](#changelog)
-- [2.9.2 - 12 November 2017](#292---12-november-2017)
+- [2.9.3 - 2 December 2017](#293---2-december-2017)
     - [Added](#added)
     - [Changed](#changed)
 
@@ -59,7 +59,7 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^4.11.0",
+    "eslint": "^4.12.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
@@ -381,14 +381,17 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.9.2 - 12 November 2017
+## 2.9.3 - 2 December 2017
 
 ### Added
 
-- configed all [`rules/unicorn`](https://github.com/codemachiner/eslint-config/blob/master/rules/unicorn.js), not just `fileCase`
-- [`import/exports-last`](https://github.com/codemachiner/eslint-config/blob/master/rules/import.js#L86) - all exports are declared at the bottom of the file
-- [`jest/prefer-to-have-length`](https://github.com/codemachiner/eslint-config/blob/master/rules/jest.js#L50) - use `toHaveLength`, not check `.length`
+- [`react/jsx-one-expression-per-line`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L312)
+- [`react/destructuring-assignment`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L318)
+- [`react/no-access-state-in-setstate`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L323)
+- [`react/button-has-type`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L328)
+- [`react/jsx-wrap-multilines`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L333)
 
 ### Changed
 
-- [`no-unused-expressions`](https://github.com/codemachiner/eslint-config/blob/master/rules/best-practices.js#L176)
+- [`react/sort-comp`](https://github.com/codemachiner/eslint-config/blob/master/rules/rules.js#L252)
+- [`react/require-default-props`](https://github.com/codemachiner/eslint-config/blob/master/rules/rules.js#L223)

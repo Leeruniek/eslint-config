@@ -1,6 +1,6 @@
 {
   "name": "@leeruniek/eslint-config",
-  "version": "2.9.2",
+  "version": "2.9.3",
   "description": "JavaScript ESLint rules",
   "main": "rules/frontend.js",
   "scripts": {
@@ -35,24 +35,24 @@
   "author": "Andrei Dumitrescu <andrei@leeruniek.nl> (https://twitter.com/andreidcm)",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "4.11.0",
+    "eslint": "4.12.1",
     "eslint-plugin-compat": "2.1.0",
     "eslint-plugin-flowtype": "2.39.1",
-    "eslint-plugin-flowtype-errors": "3.3.5",
-    "eslint-plugin-html": "3.2.2",
+    "eslint-plugin-flowtype-errors": "3.3.6",
+    "eslint-plugin-html": "4.0.1",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jest": "21.3.2",
     "eslint-plugin-json": "1.2.0",
     "eslint-plugin-jsx-control-statements": "2.2.0",
     "eslint-plugin-no-inferred-method-name": "1.0.2",
     "eslint-plugin-promise": "3.6.0",
-    "eslint-plugin-react": "7.4.0",
+    "eslint-plugin-react": "7.5.1",
     "eslint-plugin-unicorn": "3.0.0",
     "markdownlint-cli": "0.5.0",
     "npm-check": "5.5.2"
   },
   "peerDependencies": {
-    "eslint": "^4.11.0",
+    "eslint": "^4.12.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",

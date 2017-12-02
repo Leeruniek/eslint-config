@@ -9,6 +9,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.9.3] - 2 December 2017
+
+### Added
+
+- [`react/jsx-one-expression-per-line`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L312)
+- [`react/destructuring-assignment`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L318)
+- [`react/no-access-state-in-setstate`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L323)
+- [`react/button-has-type`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L328)
+- [`react/jsx-wrap-multilines`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L333)
+
+### Changed
+
+- [`react/sort-comp`](https://github.com/codemachiner/eslint-config/blob/master/rules/rules.js#L252)
+- [`react/require-default-props`](https://github.com/codemachiner/eslint-config/blob/master/rules/rules.js#L223)
+
 ## [2.9.2] - 12 November 2017
 
 ### Added
@@ -235,7 +250,8 @@ React support
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.9.2...HEAD
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.9.3...HEAD
+[2.9.3]: https://github.com/codemachiner/eslint-rules/compare/v2.9.2...v2.9.3
 [2.9.2]: https://github.com/codemachiner/eslint-rules/compare/v2.9.0...v2.9.2
 [2.9.1]: https://github.com/codemachiner/eslint-rules/compare/v2.9.0...v2.9.1
 [2.9.0]: https://github.com/codemachiner/eslint-rules/compare/v2.8.3...v2.9.0

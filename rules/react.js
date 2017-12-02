@@ -220,7 +220,9 @@ module.exports = {
      * This rule aims to ensure that any non-required PropType declaration
      * of a component has a corresponding defaultProps value.
      */
-    "react/require-default-props": "error",
+    "react/require-default-props": [ "error", {
+      forbidDefaultForRequired: true,
+    } ],
 
     /*
      * This rule aims to ensure that any defaultProp has a non-required
@@ -250,7 +252,11 @@ module.exports = {
     "react/sort-comp": [ "error", {
       order: [
         "init",
+        "lifecycle",
         "rendering",
+
+        "/^(_?)handle.+$/",
+        "/^on.+$/",
 
         /*
          * all that remains is static-methods. if static-methods
@@ -258,9 +264,6 @@ module.exports = {
          * before render will throw an error
          */
         "everything-else",
-        "lifecycle",
-        "/^on.+$/",
-        "/^(_?)handle.+$/",
       ],
       groups: {
         init: [
@@ -302,6 +305,32 @@ module.exports = {
      * equality check on the prop to determine if it should update.
      */
     "react/jsx-no-bind": "error",
+
+    /*
+     * This option limits every line in JSX to one expression each.
+     */
+    "react/jsx-one-expression-per-line": "error",
+
+    /*
+     * Enforce consistent usage of destructuring assignment of props,
+     * state, and context
+     */
+    "react/destructuring-assignment": [ "error", "always" ],
+
+    /*
+     * Prevent using this.state within a this.setState
+     */
+    "react/no-access-state-in-setstate": "error",
+
+    /*
+     * Prevent usage of button elements without an explicit type attribute
+     */
+    "react/button-has-type": "error",
+
+    /*
+     * Prevent missing parentheses around multiline JSX
+     */
+    "react/jsx-wrap-multilines": "error",
 
     /*
      * Choose tag is empty or does not have at least one When
