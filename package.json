@@ -1,6 +1,6 @@
 {
   "name": "@leeruniek/eslint-config",
-  "version": "2.9.5",
+  "version": "2.9.6",
   "description": "JavaScript ESLint rules",
   "main": "rules/frontend.js",
   "scripts": {
