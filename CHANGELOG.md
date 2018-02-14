@@ -9,6 +9,29 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.9.5] - 14 February 2018
+
+### Added
+
+- [`react/no-this-in-sfc`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-this-in-sfc.md) - Prevent this from being used in stateless functional components
+- [`unicorn/no-unsafe-regex`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-unsafe-regex.md) - Uses [safe-regex](https://github.com/substack/safe-regex) to disallow potentially catastrophic exponential-time regular expressions
+- [`unicorn/error-message`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/error-message.md) - Enforce passing a message value when throwing a built-in error
+- [`flowtype/newline-after-flow-annotation`](https://github.com/gajus/eslint-plugin-flowtype/blob/master/.README/rules/newline-after-flow-annotation.md) - Enforces that `@flow` annotations be followed by an empty line
+- [`flowtype/require-exact-type`](https://github.com/gajus/eslint-plugin-flowtype/blob/master/.README/rules/require-exact-type.md) - Report all object type definitions that aren't exact
+- [`flowtype/no-existential-type`](https://github.com/gajus/eslint-plugin-flowtype/blob/master/.README/rules/no-existential-type.md) - Disallows use of the existential type `*`
+
+### Changed
+
+- [`react/boolean-prop-naming`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming.md) - changed regexp `^(is|has)[A-Z]([A-Za-z0-9]?)+` from to `^(is|has|can|should).+` and added a custom message
+- [`react/sort-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md)
+- [`unicorn/filename-case`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/filename-case.md) - from `camelCase` to `kebab-case`
+
+## [2.9.4] - 14 January 2018
+
+### Added
+
+- [`camelcase`](https://github.com/codemachiner/eslint-config/blob/master/rules/style.js#L35)
+
 ## [2.9.3] - 2 December 2017
 
 ### Added
@@ -250,7 +273,9 @@ React support
     - Defined in [`error.js`](https://github.com/codemachiner/eslint-config/blob/master/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.9.3...HEAD
+[Unreleased]: https://github.com/codemachiner/eslint-rules/compare/v2.9.5...HEAD
+[2.9.5]: https://github.com/codemachiner/eslint-rules/compare/v2.9.4...v2.9.5
+[2.9.4]: https://github.com/codemachiner/eslint-rules/compare/v2.9.3...v2.9.4
 [2.9.3]: https://github.com/codemachiner/eslint-rules/compare/v2.9.2...v2.9.3
 [2.9.2]: https://github.com/codemachiner/eslint-rules/compare/v2.9.0...v2.9.2
 [2.9.1]: https://github.com/codemachiner/eslint-rules/compare/v2.9.0...v2.9.1

@@ -24,6 +24,11 @@ module.exports = {
     "react/jsx-key": "error",
 
     /*
+     * Prevent this from being used in stateless functional components
+     */
+    "react/no-this-in-sfc": "error",
+
+    /*
      * This rule prevents comment strings (e.g. beginning with // or /*)
      * from being accidentally injected as a text node in JSX statements.
      */
@@ -111,7 +116,8 @@ module.exports = {
 
     // Enforces consistent naming for boolean props
     "react/boolean-prop-naming": [ "error", {
-      rule: "^(is|has)[A-Z]([A-Za-z0-9]?)+",
+      rule   : "^(is|has|can|should).+",
+      message: "({{ propName }}) must start with (is|has|can|should)",
     } ],
 
     /*
@@ -166,12 +172,12 @@ module.exports = {
     /*
      * This option validates a specific indentation style for JSX.
      */
-    "react/jsx-indent": [ "error", 2 ],
+    "react/jsx-indent": [ "error", 4 ],
 
     /*
      * This option validates a specific indentation style for props.
      */
-    "react/jsx-indent-props": [ "error", 2 ],
+    "react/jsx-indent-props": [ "error", 4 ],
 
     /*
      * Ensures that any component or prop methods used to handle events
@@ -257,23 +263,15 @@ module.exports = {
 
         "/^(_?)handle.+$/",
         "/^on.+$/",
-
-        /*
-         * all that remains is static-methods. if static-methods
-         * are after render then the static propTypes that we want
-         * before render will throw an error
-         */
-        "everything-else",
       ],
       groups: {
         init: [
           "displayName",
-          "propTypes",
-          "defaultProps",
+          "statics",
+          "static-methods",
           "state",
           "contextTypes",
           "childContextTypes",
-          "statics",
           "constructor",
         ],
         rendering: [

@@ -14,6 +14,12 @@ module.exports = {
     "flowtype-errors/enforce-min-coverage": [ "error", 80 ],
 
     /*
+     * Enforces that `@flow` annotations be followed by an empty line,
+     * separated by newline
+     */
+    "flowtype/newline-after-flow-annotation": [ "error", "always" ],
+
+    /*
      * Enforces a particular style for boolean type annotations.
      */
     "flowtype/boolean-style": [ "error", "boolean" ],
@@ -23,6 +29,11 @@ module.exports = {
      * Used to suppress no-undef reporting of type identifiers.
      */
     "flowtype/define-flow-type": 1,
+
+    /*
+     * Report all object type definitions that aren't exact.
+     */
+    "flowtype/require-exact-type": [ "error", "always" ],
 
     /*
      * Enforces consistent use of trailing commas in Object and Tuple
@@ -65,6 +76,8 @@ module.exports = {
       Object  : false,
       any     : true,
     } ],
+
+    "flowtype/no-existential-type": "error",
 
     /*
      * Enforces consistent separators between properties in Flow object

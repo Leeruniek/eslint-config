@@ -6,6 +6,11 @@ module.exports = {
     /*
      * Enforces all linted files to have their names in a certain case
      * style. Default is kebabCase.
+     *
+     * kebabCase:
+     *      foo-bar.js
+     *      foo-bar.test.js
+     *      foo-bar.test-utils.js
      */
     "unicorn/filename-case": [ "warn", {
       case: "kebabCase",
@@ -57,5 +62,16 @@ module.exports = {
 
     // Enforce the use of regex shorthands to improve readability
     "unicorn/regex-shorthand": "error",
+
+    /*
+     * Disallow unsafe regular expressions. Uses safe-regex to disallow
+     * potentially catastrophic exponential-time regular expressions.
+     */
+    "unicorn/no-unsafe-regex": "error",
+
+    /*
+     * Enforce passing a message value when throwing a built-in error
+     */
+    "unicorn/error-message": "error",
   },
 }

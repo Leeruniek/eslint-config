@@ -1,8 +1,8 @@
 # JavaScript ESLint rules
 
 [![npm package version](https://badge.fury.io/js/%40leeruniek%2Feslint-config.svg)](https://badge.fury.io/js/%40leeruniek%2Feslint-config)
-[![](https://david-dm.org/leeruniek/eslint-config/dev-status.svg)](https://david-dm.org/leeruniek/eslint-config?type=dev)
-[![](https://david-dm.org/leeruniek/eslint-config/peer-status.svg)](https://david-dm.org/leeruniek/eslint-config?type=peer)
+[![dev-badge](https://david-dm.org/leeruniek/eslint-config/dev-status.svg)](https://david-dm.org/leeruniek/eslint-config?type=dev)
+[![peer-badge](https://david-dm.org/leeruniek/eslint-config/peer-status.svg)](https://david-dm.org/leeruniek/eslint-config?type=peer)
 
 > JavaScript ESLint bundle with best practices and common use rules for writing more consistent code.
 >
@@ -12,7 +12,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 
 ---
 
-<!-- MarkdownTOC depth=2 autolink=true indent="    " -->
+<!-- MarkdownTOC depth=2 bracket=round autolink=true indent="    " -->
 
 - [Installation & Usage](#installation--usage)
 - [Rule sets](#rule-sets)
@@ -38,7 +38,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Reading](#reading)
 - [Changelog](#changelog)
-- [2.9.3 - 2 December 2017](#293---2-december-2017)
+- [2.9.5 - 14 February 2018](#295---14-february-2018)
     - [Added](#added)
     - [Changed](#changed)
 
@@ -59,12 +59,12 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^4.12.1",
+    "eslint": "^4.17.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
     "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-unicorn": "^3.0.0"
+    "eslint-plugin-unicorn": "^4.0.1"
 }
 ...
 ```
@@ -381,17 +381,19 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.9.3 - 2 December 2017
+## 2.9.5 - 14 February 2018
 
 ### Added
 
-- [`react/jsx-one-expression-per-line`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L312)
-- [`react/destructuring-assignment`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L318)
-- [`react/no-access-state-in-setstate`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L323)
-- [`react/button-has-type`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L328)
-- [`react/jsx-wrap-multilines`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L333)
+- [`react/no-this-in-sfc`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-this-in-sfc.md) - Prevent this from being used in stateless functional components
+- [`unicorn/no-unsafe-regex`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-unsafe-regex.md) - Uses [safe-regex](https://github.com/substack/safe-regex) to disallow potentially catastrophic exponential-time regular expressions
+- [`unicorn/error-message`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/error-message.md) - Enforce passing a message value when throwing a built-in error
+- [`flowtype/newline-after-flow-annotation`](https://github.com/gajus/eslint-plugin-flowtype/blob/master/.README/rules/newline-after-flow-annotation.md) - Enforces that `@flow` annotations be followed by an empty line
+- [`flowtype/require-exact-type`](https://github.com/gajus/eslint-plugin-flowtype/blob/master/.README/rules/require-exact-type.md) - Report all object type definitions that aren't exact
+- [`flowtype/no-existential-type`](https://github.com/gajus/eslint-plugin-flowtype/blob/master/.README/rules/no-existential-type.md) - Disallows use of the existential type `*`
 
 ### Changed
 
-- [`react/sort-comp`](https://github.com/codemachiner/eslint-config/blob/master/rules/rules.js#L252)
-- [`react/require-default-props`](https://github.com/codemachiner/eslint-config/blob/master/rules/rules.js#L223)
+- [`react/boolean-prop-naming`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming.md) - changed regexp `^(is|has)[A-Z]([A-Za-z0-9]?)+` from to `^(is|has|can|should).+` and added a custom message
+- [`react/sort-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md)
+- [`unicorn/filename-case`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/filename-case.md) - from `camelCase` to `kebab-case`
