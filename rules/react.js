@@ -172,12 +172,12 @@ module.exports = {
     /*
      * This option validates a specific indentation style for JSX.
      */
-    "react/jsx-indent": [ "error", 4 ],
+    "react/jsx-indent": [ "error", 2 ],
 
     /*
      * This option validates a specific indentation style for props.
      */
-    "react/jsx-indent-props": [ "error", 4 ],
+    "react/jsx-indent-props": [ "error", 2 ],
 
     /*
      * Ensures that any component or prop methods used to handle events
