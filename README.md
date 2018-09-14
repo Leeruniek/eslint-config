@@ -12,7 +12,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 
 ---
 
-<!-- MarkdownTOC depth=2 bracket=round autolink=true indent="    " -->
+<!-- MarkdownTOC levels="1,2,3" autolink="true" indent="    " -->
 
 - [Installation & Usage](#installation--usage)
 - [Rule sets](#rule-sets)
@@ -26,7 +26,6 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
     - [react](#react)
     - [jsx-control-statements](#jsx-control-statements)
     - [compat](#compat)
-    - [jest](#jest)
     - [no-inferred-method-name](#no-inferred-method-name)
 - [Using with SublimeText](#using-with-sublimetext)
     - [SublimeLinter](#sublimelinter)
@@ -38,15 +37,11 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Reading](#reading)
 - [Changelog](#changelog)
-- [2.9.5 - 14 February 2018](#295---14-february-2018)
-    - [Added](#added)
-    - [Changed](#changed)
+- [2.9.6 - 23 April 2018](#296---23-april-2018)
 
 <!-- /MarkdownTOC -->
 
 ## Installation & Usage
-
-Requires ESLint >= 4.0.0
 
 ```bash
 npm i eslint @leeruniek/eslint-config --save-dev
@@ -59,12 +54,12 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^4.17.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-json": "^1.2.0",
+    "eslint": "^5.5.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-json": "^1.2.1",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-unicorn": "^4.0.1"
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-unicorn": "^6.0.1"
 }
 ...
 ```
@@ -106,7 +101,6 @@ Add `@leeruniek/eslint-config/rules/frontend` (or `/backend`) to the extends sec
 
   ≡ node.js             |> only in `backend`
 
-  ≡ jest.js             |> not in any
   ≡ flow.js             |
 ...
 ```
@@ -197,22 +191,6 @@ Lint the browser compatibility of your code (using [caniuse](http://caniuse.com/
 - not in peerDependencies: `npm install --save-dev eslint-plugin-compat`
 - loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) bundle
 - rules in [`@leeruniek/eslint-config/rules/compat`](https://github.com/leeruniek/eslint-config/blob/master/rules/compat.js)
-
-### [jest](https://www.npmjs.org/package/eslint-plugin-jest)
-
-[Jest](https://github.com/facebook/jest) is used by Facebook to test all JavaScript code including React applications and it integrates seamlessly with Babel.
-
-- not in peerDependencies: `npm install --save-dev eslint-plugin-jest`
-- not loaded in any bundle, need to extend it separately:
-    ```js
-    ...
-    "extends": [
-        "@leeruniek/eslint-config/rules/frontend",
-        "@leeruniek/eslint-config/rules/jest",
-    ],
-    ...
-    ```
-- rules in [`@leeruniek/eslint-config/rules/jest`](https://github.com/leeruniek/eslint-config/blob/master/rules/jest.js)
 
 ### [no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name)
 
@@ -381,19 +359,6 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.9.5 - 14 February 2018
+## 2.9.7 - 14 September 2018
 
-### Added
-
-- [`react/no-this-in-sfc`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-this-in-sfc.md) - Prevent this from being used in stateless functional components
-- [`unicorn/no-unsafe-regex`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/no-unsafe-regex.md) - Uses [safe-regex](https://github.com/substack/safe-regex) to disallow potentially catastrophic exponential-time regular expressions
-- [`unicorn/error-message`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/error-message.md) - Enforce passing a message value when throwing a built-in error
-- [`flowtype/newline-after-flow-annotation`](https://github.com/gajus/eslint-plugin-flowtype/blob/master/.README/rules/newline-after-flow-annotation.md) - Enforces that `@flow` annotations be followed by an empty line
-- [`flowtype/require-exact-type`](https://github.com/gajus/eslint-plugin-flowtype/blob/master/.README/rules/require-exact-type.md) - Report all object type definitions that aren't exact
-- [`flowtype/no-existential-type`](https://github.com/gajus/eslint-plugin-flowtype/blob/master/.README/rules/no-existential-type.md) - Disallows use of the existential type `*`
-
-### Changed
-
-- [`react/boolean-prop-naming`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming.md) - changed regexp `^(is|has)[A-Z]([A-Za-z0-9]?)+` from to `^(is|has|can|should).+` and added a custom message
-- [`react/sort-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md)
-- [`unicorn/filename-case`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/filename-case.md) - from `camelCase` to `kebab-case`
+Bumped versions
