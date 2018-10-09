@@ -1,5 +1,5 @@
 /* eslint-env node */
 
 module.exports = {
-    extends: [ "./rules/frontend.js" ],
+  extends: ["./targets/react.js"],
 }

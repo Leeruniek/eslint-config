@@ -9,29 +9,24 @@ module.exports = {
     "block-scoped-var": "error",
 
     // Specify the maximum cyclomatic complexity allowed in a program
-    "complexity": [ 0, 11 ],
+    complexity: [0, 5],
 
     // Require return statements to either always or never specify values
     "consistent-return": "error",
 
-    // Specify curly brace conventions for all control statements
-    "curly": [ "error", "multi-line" ],
-
     // Require default case in switch statements
     "default-case": "error",
 
-    // Enforces consistent newlines before or after dots
-    "dot-location": 0,
-
     // Encourages use of dot notation whenever possible
     "dot-notation": [
-      "error", {
+      "error",
+      {
         allowKeywords: true,
       },
     ],
 
     // Require the use of === and !==
-    "eqeqeq": "error",
+    eqeqeq: "error",
 
     // Make sure for-in loops have an if statement
     "guard-for-in": "error",
@@ -52,9 +47,12 @@ module.exports = {
     "no-div-regex": 0,
 
     // Disallow else after a return in an if
-    "no-else-return": [ "error", {
-      allowElseIf: false,
-    } ],
+    "no-else-return": [
+      "error",
+      {
+        allowElseIf: false,
+      },
+    ],
 
     // Disallow use of empty destructuring patterns
     "no-empty-pattern": 0,
@@ -73,12 +71,6 @@ module.exports = {
 
     // Disallow fallthrough of case statements
     "no-fallthrough": "error",
-
-    /*
-     * Disallow the use of leading or trailing decimal points in numeric
-     * Literals
-     */
-    "no-floating-decimal": "error",
 
     // Disallow the type conversions with shorter notations
     "no-implicit-coercion": 0,
@@ -106,13 +98,6 @@ module.exports = {
 
     // Disallow the use of magic numbers
     "no-magic-numbers": 0,
-
-    /*
-     * This rule aims to disallow multiple whitespace around logical
-     * Expressions, conditional expressions, declarations, array elements,
-     * Object properties, sequences and function parameters.
-     */
-    "no-multi-spaces": "warn",
 
     // Disallow use of multiline strings
     "no-multi-str": "error",
@@ -143,7 +128,8 @@ module.exports = {
 
     // Disallow reassignment of function parameters
     "no-param-reassign": [
-      "error", {
+      "error",
+      {
         props: false,
       },
     ],
@@ -173,10 +159,13 @@ module.exports = {
     "no-throw-literal": "error",
 
     // Disallow usage of expressions in statement position
-    "no-unused-expressions": [ "error", {
-      allowShortCircuit: true,
-      allowTernary     : true,
-    } ],
+    "no-unused-expressions": [
+      "error",
+      {
+        allowShortCircuit: true,
+        allowTernary: true,
+      },
+    ],
 
     // Disallow unnecessary .call() and .apply()
     "no-useless-call": 0,
@@ -189,9 +178,10 @@ module.exports = {
 
     // Disallow usage of configurable warning terms in comments: e.g. todo
     "no-warning-comments": [
-      0, {
+      0,
+      {
         location: "start",
-        terms   : [ "todo", "fixme", "xxx" ],
+        terms: ["todo", "fixme", "xxx"],
       },
     ],
 
@@ -199,15 +189,12 @@ module.exports = {
     "no-with": "error",
 
     // Require use of the second argument for parseInt()
-    "radix": "error",
+    radix: "error",
 
     // Requires to declare all vars on top of their containing scope
     "vars-on-top": "error",
 
-    // Require immediate function invocation to be wrapped in parentheses
-    "wrap-iife": [ "error", "outside" ],
-
     // Require or disallow Yoda conditions
-    "yoda": 0,
+    yoda: 0,
   },
 }

@@ -1,20 +1,25 @@
 /* eslint-env node */
 
 module.exports = {
-  plugins: [
-    "react",
-    "jsx-control-statements",
-  ],
-
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-
-  env: {
-    "jsx-control-statements/jsx-control-statements": true,
-  },
+  /*
+   * Disabled by prettier
+   * https://github.com/prettier/eslint-config-prettier/blob/master/react.js
+   *
+   * "react/jsx-child-element-spacing": "off",
+   * "react/jsx-closing-bracket-location": "off",
+   * "react/jsx-closing-tag-location": "off",
+   * "react/jsx-curly-spacing": "off",
+   * "react/jsx-equals-spacing": "off",
+   * "react/jsx-first-prop-new-line": "off",
+   * "react/jsx-indent": "off",
+   * "react/jsx-indent-props": "off",
+   * "react/jsx-max-props-per-line": "off",
+   * "react/jsx-one-expression-per-line": "off",
+   * "react/jsx-props-no-multi-spaces": "off",
+   * "react/jsx-space-before-closing": "off",
+   * "react/jsx-tag-spacing": "off",
+   * "react/jsx-wrap-multilines": "off"
+   */
 
   rules: {
     // Prevent missing displayName in a React component definition
@@ -23,9 +28,41 @@ module.exports = {
     // Detect missing key prop
     "react/jsx-key": "error",
 
-    /*
-     * Prevent this from being used in stateless functional components
-     */
+    // Prevent void DOM elements (e.g. <img />, <br />) from receiving children
+    "react/void-dom-elements-no-children": "error",
+
+    // Enforce ES5 or ES6 class for React Components
+    "react/prefer-es6-class": "error",
+
+    // Prevent definitions of unused prop types
+    "react/no-unused-prop-types": "error",
+
+    // Prevent definitions of unused state
+    "react/no-unused-state": "error",
+
+    // Prevent usage of UNSAFE_ methods
+    "react/no-unsafe": "error",
+
+    // Prevent usage of setState in componentWillUpdate
+    "react/no-will-update-set-state": "error",
+
+    // Forbid certain props on DOM Nodes
+    "react/forbid-dom-props": ["error", { forbid: ["style", "id"] }],
+
+    "react/forbid-prop-types": [
+      "error",
+      {
+        forbid: ["any", "array", "object"],
+      },
+    ],
+
+    // Restrict file extensions that may contain JSX
+    "react/jsx-filename-extension": "error",
+
+    // Validate JSX maximum depth
+    "react/jsx-max-depth": ["error", { max: 3 }],
+
+    // Prevent this from being used in stateless functional components
     "react/no-this-in-sfc": "error",
 
     /*
@@ -49,9 +86,12 @@ module.exports = {
     "react/jsx-no-target-blank": "error",
 
     // Disallow undeclared variables in JSX
-    "react/jsx-no-undef": [ "error", {
-      allowGlobals: true,
-    } ],
+    "react/jsx-no-undef": [
+      "error",
+      {
+        allowGlobals: true,
+      },
+    ],
 
     // Prevent React to be incorrectly marked as unused
     "react/jsx-uses-react": "error",
@@ -64,7 +104,7 @@ module.exports = {
      * value to true or omit the value. This rule will enforce one or the
      * other to keep consistency in your code.
      */
-    "react/jsx-boolean-value": [ "error", "always" ],
+    "react/jsx-boolean-value": ["error", "always"],
 
     // Prevent passing of children as props
     "react/no-children-prop": "error",
@@ -115,10 +155,13 @@ module.exports = {
     "react/require-optimization": "off",
 
     // Enforces consistent naming for boolean props
-    "react/boolean-prop-naming": [ "error", {
-      rule   : "^(is|has|can|should).+",
-      message: "({{ propName }}) must start with (is|has|can|should)",
-    } ],
+    "react/boolean-prop-naming": [
+      "error",
+      {
+        rule: "^(is|has|can|should).+",
+        message: "({{ propName }}) must start with (is|has|can|should)",
+      },
+    ],
 
     /*
      * Ensure no casing typos were made declaring static class properties
@@ -153,82 +196,45 @@ module.exports = {
     "react/no-did-mount-set-state": "error",
 
     /*
-     * Enforce or forbid spaces after the opening bracket, before the
-     * closing bracket of self-closing elements, and between the angle
-     * bracket and slash of JSX closing or self-closing elements.
-     */
-    "react/jsx-tag-spacing": [ "error", {
-      closingSlash     : "never",
-      beforeSelfClosing: "always",
-      afterOpening     : "never",
-    } ],
-
-    /*
      * Enforces coding style that user-defined JSX components are defined
      * and referenced in PascalCase.
      */
     "react/jsx-pascal-case": "error",
 
     /*
-     * This option validates a specific indentation style for JSX.
-     */
-    "react/jsx-indent": [ "error", 2 ],
-
-    /*
-     * This option validates a specific indentation style for props.
-     */
-    "react/jsx-indent-props": [ "error", 2 ],
-
-    /*
      * Ensures that any component or prop methods used to handle events
      * are correctly prefixed.
      */
-    "react/jsx-handler-names": [ "error", {
-      eventHandlerPrefix    : "_?handle",
-      eventHandlerPropPrefix: "on",
-    } ],
-
-    /*
-     * Ensure correct position of the first property.
-     */
-    "react/jsx-first-prop-new-line": [ "error", "multiline" ],
-
-    /*
-     * Some style guides require or disallow spaces around equal signs.
-     */
-    "react/jsx-equals-spacing": [ "error", "never" ],
-
-    /*
-     * This rule aims to maintain consistency around the spacing inside of
-     * JSX attributes and expressions inside element children.
-     */
-    "react/jsx-curly-spacing": [ "error", {
-      when: "always",
-    } ],
+    "react/jsx-handler-names": [
+      "error",
+      {
+        eventHandlerPrefix: "_?handle",
+        eventHandlerPropPrefix: "on",
+      },
+    ],
 
     /*
      * This rule allows you to enforce curly braces or disallow
      * unnecessary curly braces in JSX props and/or children.
      */
-    "react/jsx-curly-brace-presence": [ "error", {
-      props   : "never",
-      children: "never",
-    } ],
-
-    /*
-     * This rule checks all JSX multiline elements and verifies the
-     * location of the closing bracket. By default this one must be
-     * aligned with the opening tag.
-     */
-    "react/jsx-closing-bracket-location": [ "error", "after-props" ],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        props: "never",
+        children: "never",
+      },
+    ],
 
     /*
      * This rule aims to ensure that any non-required PropType declaration
      * of a component has a corresponding defaultProps value.
      */
-    "react/require-default-props": [ "error", {
-      forbidDefaultForRequired: true,
-    } ],
+    "react/require-default-props": [
+      "error",
+      {
+        forbidDefaultForRequired: true,
+      },
+    ],
 
     /*
      * This rule aims to ensure that any defaultProp has a non-required
@@ -245,54 +251,59 @@ module.exports = {
      * Components without children can be self-closed to avoid unnecessary
      * extra closing tag.
      */
-    "react/self-closing-comp": [ "error", {
-      component: true,
-      html     : true,
-    } ],
+    "react/self-closing-comp": [
+      "error",
+      {
+        component: true,
+        html: true,
+      },
+    ],
 
     /*
      * When creating React components it is more convenient to always
      * follow the same organisation for method order to help you easily
      * find lifecyle methods, event handlers, etc.
      */
-    "react/sort-comp": [ "error", {
-      order: [
-        "init",
-        "lifecycle",
-        "rendering",
+    "react/sort-comp": [
+      "error",
+      {
+        order: [
+          "init",
+          "lifecycle",
+          "rendering",
 
-        "/^(_?)handle.+$/",
-        "/^on.+$/",
-      ],
-      groups: {
-        init: [
-          "displayName",
-          "statics",
-          "static-methods",
-          "state",
-          "contextTypes",
-          "childContextTypes",
-          "constructor",
+          "/^(_?)handle.+$/",
+          "/^on.+$/",
         ],
-        rendering: [
-          "render",
-          "/^_?render.+$/",
-        ],
-        lifecycle: [
-          "mixins",
-          "getDefaultProps",
-          "getInitialState",
-          "getChildContext",
-          "componentWillMount",
-          "componentDidMount",
-          "componentWillReceiveProps",
-          "shouldComponentUpdate",
-          "componentWillUpdate",
-          "componentDidUpdate",
-          "componentWillUnmount",
-        ],
+        groups: {
+          init: [
+            "displayName",
+            "statics",
+            "static-methods",
+            "state",
+            "contextTypes",
+            "childContextTypes",
+            "constructor",
+            "getDerivedStateFromProps",
+          ],
+          rendering: ["render", "/^_?render.+$/"],
+          lifecycle: [
+            "mixins",
+            "getDefaultProps",
+            "getInitialState",
+            "getChildContext",
+            "componentWillMount",
+            "componentDidMount",
+            "componentWillReceiveProps",
+            "shouldComponentUpdate",
+            "componentWillUpdate",
+            "componentDidUpdate",
+            "componentWillUnmount",
+            "componentDidCatch",
+          ],
+        },
       },
-    } ],
+    ],
 
     /*
      * A bind call or arrow function in a JSX prop will create a brand new
@@ -305,30 +316,16 @@ module.exports = {
     "react/jsx-no-bind": "error",
 
     /*
-     * This option limits every line in JSX to one expression each.
-     */
-    "react/jsx-one-expression-per-line": "error",
-
-    /*
      * Enforce consistent usage of destructuring assignment of props,
      * state, and context
      */
-    "react/destructuring-assignment": [ "error", "always" ],
+    "react/destructuring-assignment": ["error", "always"],
 
-    /*
-     * Prevent using this.state within a this.setState
-     */
+    // Prevent using this.state within a this.setState
     "react/no-access-state-in-setstate": "error",
 
-    /*
-     * Prevent usage of button elements without an explicit type attribute
-     */
+    // Prevent usage of button elements without an explicit type attribute
     "react/button-has-type": "error",
-
-    /*
-     * Prevent missing parentheses around multiline JSX
-     */
-    "react/jsx-wrap-multilines": "error",
 
     /*
      * Choose tag is empty or does not have at least one When
@@ -358,10 +355,8 @@ module.exports = {
      */
     "jsx-control-statements/jsx-otherwise-once-last": "error",
 
-    /*
-     * Use If tag instead of ternary operator.
-     */
-    "jsx-control-statements/jsx-use-if-tag": "error",
+    // Use If tag instead of ternary operator.
+    "jsx-control-statements/jsx-use-if-tag": "warn",
 
     /*
      * Warn if When tag is missing condition attribute.
@@ -386,8 +381,10 @@ module.exports = {
      * inspected for exports.
      */
     "import/extensions": [
-      "error", "always", {
-        js : "never",
+      "error",
+      "always",
+      {
+        js: "never",
         jsx: "never",
       },
     ],

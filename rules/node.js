@@ -23,7 +23,7 @@ module.exports = {
     "no-buffer-constructor": "error",
 
     // Disallow mixing regular variable and require declarations
-    "no-mixed-requires": [ 0, false ],
+    "no-mixed-requires": [0, false],
 
     // Disallow use of new operator with the require function
     "no-new-require": 0,
@@ -49,7 +49,8 @@ module.exports = {
      * allow any synchronous operations that could lock up the server.
      */
     "no-sync": [
-      "error", {
+      "error",
+      {
         allowAtRootLevel: true,
       },
     ],

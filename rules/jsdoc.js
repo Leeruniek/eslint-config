@@ -8,24 +8,25 @@ module.exports = {
      * documentation automatically.
      */
     "require-jsdoc": [
-      "error", {
+      "error",
+      {
         require: {
           ArrowFunctionExpression: false,
-          ClassDeclaration       : false,
-          FunctionDeclaration    : true,
-          MethodDefinition       : false,
+          ClassDeclaration: false,
+          FunctionDeclaration: true,
+          MethodDefinition: false,
         },
       },
     ],
 
     // Ensure JSDoc comments are valid
     "valid-jsdoc": [
-      "error", {
-        requireReturn           : false,
+      "error",
+      {
+        requireReturn: false,
         requireReturnDescription: false,
-        requireReturnType       : true,
+        requireReturnType: true,
       },
     ],
-
   },
 }

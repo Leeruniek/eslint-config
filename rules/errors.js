@@ -2,9 +2,6 @@
 
 module.exports = {
   rules: {
-    // Disallow trailing commas in object literals
-    "comma-dangle": [ "error", "always-multiline" ],
-
     /*
      * A for loop with a stop condition that can never be reached, such as
      * one with a counter that moves in the wrong direction, will run
@@ -15,7 +12,7 @@ module.exports = {
     "for-direction": "error",
 
     // Disallow assignment in conditional expressions
-    "no-cond-assign": [ "error", "always" ],
+    "no-cond-assign": ["error", "always"],
 
     // Disallow use of console
     "no-console": 1,
@@ -50,12 +47,6 @@ module.exports = {
     // Disallow double-negation boolean casts in a boolean context
     "no-extra-boolean-cast": 0,
 
-    // Disallow unnecessary parentheses
-    "no-extra-parens": [ "error", "functions" ],
-
-    // Disallow unnecessary semicolons
-    "no-extra-semi": "error",
-
     // Disallow overwriting functions written as function declarations
     "no-func-assign": "error",
 
@@ -89,12 +80,6 @@ module.exports = {
      * Trailing comma following the last element.
      */
     "no-sparse-arrays": "error",
-
-    /*
-     * Disallows confusing multiline expressions where a newline
-     * looks like it is ending a statement, but is not.
-     */
-    "no-unexpected-multiline": "error",
 
     /*
      * Disallow unreachable statements after a return, throw, continue, or

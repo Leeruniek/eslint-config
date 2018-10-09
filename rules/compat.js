@@ -1,7 +1,7 @@
 /* eslint-env node */
 
 module.exports = {
-  plugins: [ "compat" ],
+  plugins: ["compat"],
 
   rules: {
     "compat/compat": "error",

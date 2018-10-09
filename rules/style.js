@@ -1,26 +1,93 @@
 /* eslint-env node */
 
 module.exports = {
+  /*
+   * Disabled by prettier
+   * https://github.com/prettier/eslint-config-prettier/blob/master/index.js
+   *
+   *  curly: 0,
+   * "lines-around-comment": 0,
+   * "max-len": 0,
+   * "no-confusing-arrow": 0,
+   * "no-mixed-operators": 0,
+   * "no-tabs": 0,
+   * "no-unexpected-multiline": 0,
+   * quotes: 0,
+   * // The rest are rules that you never need to enable when using Prettier.
+   * "array-bracket-newline": "off",
+   * "array-bracket-spacing": "off",
+   * "array-element-newline": "off",
+   * "arrow-parens": "off",
+   * "arrow-spacing": "off",
+   * "block-spacing": "off",
+   * "brace-style": "off",
+   * "comma-dangle": "off",
+   * "comma-spacing": "off",
+   * "comma-style": "off",
+   * "computed-property-spacing": "off",
+   * "dot-location": "off",
+   * "eol-last": "off",
+   * "func-call-spacing": "off",
+   * "function-paren-newline": "off",
+   * "generator-star": "off",
+   * "generator-star-spacing": "off",
+   * "implicit-arrow-linebreak": "off",
+   * indent: "off",
+   * "indent-legacy": "off",
+   * "jsx-quotes": "off",
+   * "key-spacing": "off",
+   * "keyword-spacing": "off",
+   * "multiline-ternary": "off",
+   * "newline-per-chained-call": "off",
+   * "new-parens": "off",
+   * "no-arrow-condition": "off",
+   * "no-comma-dangle": "off",
+   * "no-extra-parens": "off",
+   * "no-extra-semi": "off",
+   * "no-floating-decimal": "off",
+   * "no-mixed-spaces-and-tabs": "off",
+   * "no-multi-spaces": "off",
+   * "no-multiple-empty-lines": "off",
+   * "no-reserved-keys": "off",
+   * "no-space-before-semi": "off",
+   * "no-spaced-func": "off",
+   * "no-trailing-spaces": "off",
+   * "no-whitespace-before-property": "off",
+   * "no-wrap-func": "off",
+   * "nonblock-statement-body-position": "off",
+   * "object-curly-newline": "off",
+   * "object-curly-spacing": "off",
+   * "object-property-newline": "off",
+   * "one-var-declaration-per-line": "off",
+   * "operator-linebreak": "off",
+   * "padded-blocks": "off",
+   * "quote-props": "off",
+   * "rest-spread-spacing": "off",
+   * semi: "off",
+   * "semi-spacing": "off",
+   * "semi-style": "off",
+   * "space-after-function-name": "off",
+   * "space-after-keywords": "off",
+   * "space-before-blocks": "off",
+   * "space-before-function-paren": "off",
+   * "space-before-function-parentheses": "off",
+   * "space-before-keywords": "off",
+   * "space-in-brackets": "off",
+   * "space-in-parens": "off",
+   * "space-infix-ops": "off",
+   * "space-return-throw-case": "off",
+   * "space-unary-ops": "off",
+   * "space-unary-word-ops": "off",
+   * "switch-colon-spacing": "off",
+   * "template-curly-spacing": "off",
+   * "template-tag-spacing": "off",
+   * "unicode-bom": "off",
+   * "wrap-iife": "off",
+   * "wrap-regex": "off",
+   * "yield-star-spacing": "off"
+   */
+
   rules: {
-    /*
-     * This rule enforces line breaks after opening and before closing
-     * array brackets.
-     */
-    "array-bracket-newline": [ "error", "consistent" ],
-
-    // This rule enforces consistent spacing inside array brackets.
-    "array-bracket-spacing": [ "error", "always" ],
-
-
-    // This rule enforces line breaks between array elements.
-    "array-element-newline": [ "off" ],
-
-    // Require space before/after arrow function's arrow
-    "arrow-spacing": [ "error", {
-      after : true,
-      before: true,
-    } ],
-
     /**
      * This rule looks for any underscores (_) located within the source
      * code. It ignores leading and trailing underscores and only checks
@@ -31,10 +98,7 @@ module.exports = {
      * import statements, this rule only targets the name of the variable
      * that will be imported into the local module scope.
      */
-    "camelcase": [ "error", { properties: "never" } ],
-
-    // Enforces consistent spacing inside computed property brackets.
-    "computed-property-spacing": [ "error", "always" ],
+    camelcase: ["error", { properties: "never" }],
 
     /*
      * Enforces two things about variables with the designated alias names
@@ -49,19 +113,7 @@ module.exports = {
      *  With arrow functions this should not matter and pattern not be
      *  used anymore.
      */
-    "consistent-this": [ "error", "self" ],
-
-    /*
-     * Enforces at least one newline (or absence thereof) at the
-     * end of non-empty files.
-     */
-    "eol-last": [ "error", "always" ],
-
-    /*
-     * Requires or disallows spaces between the function name and the
-     * opening parenthesis that calls it.
-     */
-    "func-call-spacing": [ "error", "never" ],
+    "consistent-this": ["error", "self"],
 
     /*
      * Require or disallow named function expressions
@@ -78,7 +130,7 @@ module.exports = {
      * function expression then you will get the name of the function
      * expression in the stack trace.
      */
-    "func-names": [ "error", "always" ],
+    "func-names": ["error", "always"],
 
     /*
      * "There are only two hard things in Computer Science:
@@ -92,50 +144,7 @@ module.exports = {
      *
      * Removing "data" because VueJS
      */
-    "id-blacklist": [ "error", "err", "e", "cb", "callback" ],
-
-    // Enforce consistent indentation.
-    "indent": [ "error", 2 ],
-
-    /*
-     * This rule enforces consistent spacing between keys and values in
-     * object literal properties. In the case of long lines, it is
-     * acceptable to add a new line wherever whitespace is allowed.
-     */
-    "key-spacing": [ "error", {
-      afterColon: true,
-      align     : {
-        afterColon : true,
-        beforeColon: false,
-        on         : "colon",
-      },
-      beforeColon: false,
-      mode       : "strict",
-    } ],
-
-    /*
-     * Enforces consistent spacing around keywords and keyword-like
-     * tokens: as (in module declarations), async (of async functions),
-     * await (of await expressions), break, case, catch, class, const,
-     * continue, debugger, default, delete, do, else, export, extends,
-     * finally, for, from (in module declarations), function, get (of
-     * getters), if, import, in, instanceof, let, new, of (in for-of
-     * statements), return, set (of setters), static, super, switch, this,
-     * throw, try, typeof, var, void, while, with, and yield. This rule is
-     * designed carefully not to conflict with other spacing rules: it
-     * does not apply to spacing where other rules report problems.
-     */
-    "keyword-spacing": [ "error", {
-      after : true,
-      before: true,
-    } ],
-
-    /*
-     * Enforces a maximum line length to increase code readability and
-     * maintainability. The length of a line is defined as the number of
-     * Unicode characters in the line.
-     */
-    "max-len": [ "warn", 80 ],
+    "id-blacklist": ["error", "err", "e", "cb", "callback"],
 
     /*
      * This rule requires constructor names to begin with a capital
@@ -145,17 +154,11 @@ module.exports = {
     "new-cap": "error",
 
     /*
-     * This rule requires parentheses when invoking a constructor with no
-     * arguments using the new keyword in order to increase code clarity.
-     */
-    "new-parens": "error",
-
-    /*
      * This rule enforces a coding style where empty lines are required or
      * disallowed after var, let, or const statements to achieve a
      * consistent coding style across the project.
      */
-    "newline-after-var": [ "error", "always" ],
+    "newline-after-var": ["error", "always"],
 
     /*
      * This rule requires an empty line before return statements to
@@ -167,36 +170,10 @@ module.exports = {
     "newline-before-return": "error",
 
     /*
-     * This rule requires a newline after each call in a method chain or
-     * deep member access. Computed property accesses such as instance[
-     * something] are excluded.
-     */
-    "newline-per-chained-call": [ "error", {
-      ignoreChainWithDepth: 2,
-    } ],
-
-    /*
      * This rule disallows if statements as the only statement in else
      * blocks.
      */
     "no-lonely-if": "error",
-
-    /*
-     * This rule checks BinaryExpression and LogicalExpression.
-     * This rule may conflict with no-extra-parens rule. If you use both
-     * this and no-extra-parens rule together, you need to use the
-     * nestedBinaryExpressions option of no-extra-parens rule.
-     */
-    "no-mixed-operators": [ "error", {
-      allowSamePrecedence: true,
-      groups             : [
-        [ "+", "-", "*", "/", "%", "**" ],
-        [ "&", "|", "^", "~", "<<", ">>", ">>>" ],
-        [ "==", "!=", "===", "!==", ">", ">=", "<", "<=" ],
-        [ "&&", "||" ],
-        [ "in", "instanceof" ],
-      ],
-    } ],
 
     /*
      * This rule disallows using multiple assignments within a single
@@ -205,11 +182,14 @@ module.exports = {
     "no-multi-assign": "error",
 
     // Enforces the consistent use of empty lines.
-    "no-multiple-empty-lines": [ "error", {
-      max   : 2,
-      maxBOF: 0,
-      maxEOF: 1,
-    } ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        max: 2,
+        maxBOF: 0,
+        maxEOF: 1,
+      },
+    ],
 
     /*
      * This rule disallows negated conditions in either of the following:
@@ -219,54 +199,15 @@ module.exports = {
     "no-negated-condition": "error",
 
     /*
-     * This rule disallows trailing whitespace (spaces, tabs, and other
-     * Unicode whitespace characters) at the end of lines.
-     */
-    "no-trailing-spaces": [ "error", {
-      skipBlankLines: false,
-    } ],
-
-    /*
      * This rule disallow ternary operators when simpler alternatives
      * exist.
      */
-    "no-unneeded-ternary": [ "error", {
-      defaultAssignment: true,
-    } ],
-
-    /*
-     * This rule disallows whitespace around the dot or before the opening
-     * bracket before properties of objects if they are on the same line.
-     * This rule allows whitespace when the object and property are on
-     * separate lines, as it is common to add newlines to longer chains of
-     * properties:
-     *      foo
-     *          .bar()
-     *          .baz()
-     *          .qux()
-     */
-    "no-whitespace-before-property": "error",
-
-    /*
-     * This rule enforces consistent line breaks inside braces of object
-     * literals or destructuring assignments.
-     */
-    "object-curly-newline": [ "error", {
-      consistent: true,
-    } ],
-
-    /*
-     * Enforce placing object properties on separate lines
-     */
-    "object-property-newline": [ "error", {
-      allowMultiplePropertiesPerLine: true,
-    } ],
-
-    /*
-     * This rule enforce consistent spacing inside braces of object
-     * literals, destructuring assignments, and import/export specifiers.
-     */
-    "object-curly-spacing": [ "error", "always" ],
+    "no-unneeded-ternary": [
+      "error",
+      {
+        defaultAssignment: true,
+      },
+    ],
 
     /*
      * This rule enforces variables to be declared either together or
@@ -276,34 +217,18 @@ module.exports = {
     "one-var": "off",
 
     /*
-     * This rule enforces a consistent newlines around variable
-     * declarations. This rule ignores variable declarations inside for
-     * loop conditionals.
-     */
-    "one-var-declaration-per-line": [ "error", "always" ],
-
-    /*
      * This rule requires or disallows blank lines between the given 2
      * kinds of statements. Properly blank lines help developers to
      * understand the code.
      */
-    "padding-line-between-statements": [ "error", {
-      blankLine: "always",
-      next     : "return",
-      prev     : "var",
-    } ],
-
-    // This rule requires quotes around object literal property names.
-    "quote-props": [ "error", "consistent-as-needed" ],
-
-    /*
-     * Enforces the consistent use of either backticks, double, or single
-     * Quotes.
-     */
-    "quotes": [ "error", "double" ],
-
-    // Disallows semicolons as the end of statements.
-    "semi": [ "error", "never" ],
+    "padding-line-between-statements": [
+      "error",
+      {
+        blankLine: "always",
+        next: "return",
+        prev: "var",
+      },
+    ],
 
     /*
      * Checks all property definitions of object expressions and verifies
@@ -319,69 +244,11 @@ module.exports = {
     "sort-vars": "off",
 
     /*
-     * Enforce consistency of spacing before blocks. It is only applied on
-     * blocks that don’t begin on a new line.
-     *      -This rule ignores spacing which is between => and a block.
-     *      The spacing is handled by the arrow-spacing rule.
-     *      - This rule ignores spacing which is between a keyword and a
-     *      block. The spacing is handled by the keyword-spacing rule.
-     */
-    "space-before-blocks": [ "error", {
-      classes  : "always",
-      functions: "always",
-      keywords : "always",
-    } ],
-
-    /*
-     * This rule aims to enforce consistent spacing before function
-     * parentheses and as such, will warn whenever whitespace doesn’t
-     * match the preferences specified.
-     */
-    "space-before-function-paren": [ "error", {
-      anonymous : "always",
-      named     : "always",
-      asyncArrow: "always",
-    } ],
-
-    /*
-     * This rule will enforce consistency of spacing directly inside of
-     * parentheses, by disallowing or requiring one or more spaces to the
-     * right of ( and to the left of ). In either case, () will still be
-     * allowed.
-     */
-    "space-in-parens": [ "error", "always" ],
-
-    /*
-     * This rule is aimed at ensuring there are spaces around infix
-     * operators.
-     */
-    "space-infix-ops": "error",
-
-    /*
-     * This rule enforces consistency regarding the spaces after words
-     * unary operators and after/before nonwords unary operators.
-     */
-    "space-unary-ops": [ "error", {
-      nonwords: false,
-      words   : true,
-    } ],
-
-    /*
-     * This rule controls spacing around colons of case and default clauses
-     * in switch statements. This rule does the check only if the
-     * consecutive tokens exist on the same line.
-     */
-    "switch-colon-spacing": [ "error", {
-      after : true,
-      before: false,
-    } ],
-
-    /*
      * This rule improves readability by enforcing lines between class
      * members. It will not check empty lines before the first member and
      * after the last member, since that is already taken care of by
      * padded-blocks.
      */
-    "lines-between-class-members": [ "error", "always" ],
+    "lines-between-class-members": ["error", "always"],
   },
 }

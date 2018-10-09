@@ -1,7 +1,7 @@
 /* eslint-env node */
 
 module.exports = {
-  plugins : [ "html" ],
+  plugins: ["html"],
   settings: {
     /*
      * By default, this plugin will only consider files ending with those
@@ -10,8 +10,18 @@ module.exports = {
      * your own list of HTML extensions by using this setting. Example:
      */
     "html/html-extensions": [
-      ".erb", ".handlebars", ".hbs", ".htm", ".html", ".mustache",
-      ".nunjucks", ".php", ".tag", ".twig", ".vue", ".we",
+      ".erb",
+      ".handlebars",
+      ".hbs",
+      ".htm",
+      ".html",
+      ".mustache",
+      ".nunjucks",
+      ".php",
+      ".tag",
+      ".twig",
+      ".vue",
+      ".we",
     ],
 
     /*
@@ -19,7 +29,7 @@ module.exports = {
      * extensions as XML: .xhtml, .xml. You can set your own list of XML
      * extensions by using this setting. Example:
      */
-    "html/xml-extensions": [ ".xhtml", ".xml" ],
+    "html/xml-extensions": [".xhtml", ".xml"],
 
     /*
      * Indentation is the <script> indentation plus two spaces.
@@ -45,6 +55,7 @@ module.exports = {
      * by providing one or multiple MIME types. If a MIME type starts with
      * a /, it will be considered as a regular expression.
      */
-    "html/javascript-mime-types": "/^(application|text)\/(x-)?(javascript|babel|ecmascript-6)$/i",
+    "html/javascript-mime-types":
+      "/^(application|text)/(x-)?(javascript|babel|ecmascript-6)$/i",
   },
 }

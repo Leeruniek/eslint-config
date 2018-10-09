@@ -1,8 +1,8 @@
 /* eslint-env node */
 
 module.exports = {
-  plugins: [ "promise" ],
-  rules  : {
+  plugins: ["promise"],
+  rules: {
     /*
      * Ensure that each time a then() is applied to a promise, a catch()
      * is applied as well. Exceptions are made if you are returning that
@@ -26,7 +26,7 @@ module.exports = {
      * Ensure that inside a then() or a catch() we always return or throw
      * a raw value instead of wrapping in Promise.resolve or Promise.reject
      */
-    "promise/no-return-wrap": [ "error", { allowReject: false } ],
+    "promise/no-return-wrap": ["error", { allowReject: false }],
 
     // Enforce standard parameter names for Promise constructors
     "promise/param-names": "error",

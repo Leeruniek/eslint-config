@@ -1,16 +1,6 @@
 /* eslint-env node */
 
 module.exports = {
-  plugins: [ "import" ],
-
-  settings: {
-    /*
-     * A list of regex strings that, if matched by a path, will not report
-     * the matching module if no exports are found.
-     */
-    "import/ignore": [ "\.(sass|scss|less|css)$" ],
-  },
-
   rules: {
     /*
      * If a default import is requested, this rule will report if there is
@@ -36,7 +26,8 @@ module.exports = {
      * foo.bar(); will report if bar is not exported by ./foo.).
      */
     "import/namespace": [
-      "error", {
+      "error",
+      {
         allowComputed: true,
       },
     ],
@@ -58,7 +49,8 @@ module.exports = {
      * filesystem, as defined by standard Node require.resolve behavior.
      */
     "import/no-unresolved": [
-      "error", {
+      "error",
+      {
         commonjs: true,
       },
     ],
@@ -74,9 +66,13 @@ module.exports = {
      * A list of file extensions that will be parsed as modules and
      * inspected for exports.
      */
-    "import/extensions": [ "error", "always", {
-      js: "never",
-    } ],
+    "import/extensions": [
+      "error",
+      "always",
+      {
+        js: "never",
+      },
+    ],
 
     /*
      * Enforces that all exports are declared at the bottom of the file.

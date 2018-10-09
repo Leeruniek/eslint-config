@@ -1,3 +1,5 @@
+<!-- markdownlint-disable line-length -->
+
 # JavaScript ESLint rules
 
 [![npm package version](https://badge.fury.io/js/%40leeruniek%2Feslint-config.svg)](https://badge.fury.io/js/%40leeruniek%2Feslint-config)
@@ -14,9 +16,9 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 
 <!-- MarkdownTOC levels="1,2,3" autolink="true" indent="    " -->
 
-- [Installation & Usage](#installation--usage)
-- [Rule sets](#rule-sets)
-- [ESLint plugins used](#eslint-plugins-used)
+- [Install](#install)
+- [Use](#use)
+- [ESLint plugins](#eslint-plugins)
     - [import](#import)
     - [json](#json)
     - [promise](#promise)
@@ -37,144 +39,144 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example of `.eslintrc.js`](#example-of-eslintrcjs)
 - [Reading](#reading)
 - [Changelog](#changelog)
-- [2.9.6 - 23 April 2018](#296---23-april-2018)
+- [3.0.0 - 8 October 2018](#300---8-october-2018)
+    - [Added](#added)
+    - [Changed](#changed)
 
 <!-- /MarkdownTOC -->
 
-## Installation & Usage
+## Install
 
 ```bash
 npm i eslint @leeruniek/eslint-config --save-dev
 ```
 
-Run `npm info "@leeruniek/eslint-config@latest" peerDependencies` to get the dev packages you need to include in your own `package.json`.
+Run `npm info "@leeruniek/eslint-config@latest" peerDependencies` to get the packages needed in your own `package.json`.
 
 It should be something like this:
 
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^5.5.0",
+    "eslint": "^5.6.1",
+    "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-json": "^1.2.1",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
     "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-unicorn": "^6.0.1"
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-unicorn": "^6.0.1",
+    "prettier": "^1.14.3"
 }
 ...
 ```
 
-Add `@leeruniek/eslint-config/rules/frontend` (or `/backend`) to the extends section of your `.eslintrc` configuration file:
+## Use
 
-```json
+Add the `react` or `node` target file in your `.eslintrc` file:
+
+```javascript
 {
     "extends": [
-        "@leeruniek/eslint-config/rules/frontend",
+        // use for Node.js projects
+        "@leeruniek/eslint-config/targets/node",
+
+        // use for React projects
+        "@leeruniek/eslint-config/targets/react",
+
+        // optional Flow support
+        "@leeruniek/eslint-config/rules/flow",
     ]
 }
 ```
 
-## Rule sets
+When using `react` target, besides the peer dependencies, also install `eslint-plugin-jsx-control-statements`
 
-[`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) and [`backend`](https://github.com/leeruniek/eslint-config/blob/master/rules/backend.js) files are just bundles, each loading it's specific set of rule files.
-
-```text
-...
-▾ rules/
-  ≡ frontend.js
-  ≡ backend.js
-
-  ≡ best.practices.js   |
-  ≡ comments.js         |
-  ≡ errors.js           |
-  ≡ es6.js              |
-  ≡ import.js           |> included `frontend` & `backend`
-  ≡ jsdoc.js            |
-  ≡ promise.js          |
-  ≡ style.js            |
-  ≡ unicorn.js          |
-  ≡ variables.js        |
-
-  ≡ html.js             |
-  ≡ react.js            |> only in `frontend`
-  ≡ compat.js           |
-
-  ≡ node.js             |> only in `backend`
-
-  ≡ flow.js             |
-...
+```bash
+npm install --save-dev eslint-plugin-jsx-control-statements
 ```
 
-## ESLint plugins used
+When using with flow, Install `eslint-plugin-flowtype` and `eslint-plugin-flowtype-errors`.
+
+```bash
+npm install --save-dev eslint-plugin-flowtype eslint-plugin-flowtype-errors
+```
+
+Besides `.eslintrc`, [prettier](https://prettier.io) also needs configuring. Here's a recommended `.prettierrc` config:
+
+```json
+{
+  "semi": false,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "singleQuote": false,
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true,
+  "arrowParens": "avoid"
+}
+```
+
+## ESLint plugins
 
 ### [import](https://www.npmjs.org/package/eslint-plugin-import)
 
 Support for ES2015+ (ES6+) import/export syntax.  
 
-- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/leeruniek/eslint-config/blob/master/rules/backend.js) bundles
-- rules in [`@leeruniek/eslint-config/rules/import`](https://github.com/leeruniek/eslint-config/blob/master/rules/import.js)
+- loaded in [`react`](https://github.com/Leeruniek/eslint-config/blob/master/targets/react) & [`node`](https://github.com/Leeruniek/eslint-config/blob/master/targets/node.js) bundles
+- rules in [`@leeruniek/eslint-config/rules/import`](https://github.com/Leeruniek/eslint-config/blob/master/rules/import.js)
 
 ### [json](https://www.npmjs.org/package/eslint-plugin-json)
 
 Lint JSON files.
 
-- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/leeruniek/eslint-config/blob/master/rules/backend.js) bundles
+- loaded in [`react`](https://github.com/Leeruniek/eslint-config/blob/master/targets/react) & [`node`](https://github.com/Leeruniek/eslint-config/blob/master/targets/node.js) bundles
 
 ### [promise](https://www.npmjs.org/package/eslint-plugin-promise)
 
 Enforce best practices for JavaScript promises.
 
-- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/leeruniek/eslint-config/blob/master/rules/backend.js) bundles
-- rules in [`@leeruniek/eslint-config/rules/promise`](https://github.com/leeruniek/eslint-config/blob/master/rules/promise.js)
+- loaded in [`react`](https://github.com/Leeruniek/eslint-config/blob/master/targets/react) & [`node`](https://github.com/Leeruniek/eslint-config/blob/master/targets/node.js) bundles
+- rules in [`@leeruniek/eslint-config/rules/promise`](https://github.com/Leeruniek/eslint-config/blob/master/rules/promise.js)
 
 ### [unicorn](https://www.npmjs.org/package/eslint-plugin-unicorn)
 
 Various awesome ESLint rules.
 
-- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/leeruniek/eslint-config/blob/master/rules/backend.js) bundles
-- rules in [`@leeruniek/eslint-config/rules/unicorn`](https://github.com/leeruniek/eslint-config/blob/master/rules/unicorn.js)
+- loaded in [`react`](https://github.com/Leeruniek/eslint-config/blob/master/targets/react) & [`node`](https://github.com/Leeruniek/eslint-config/blob/master/targets/node.js) bundles
+- rules in [`@leeruniek/eslint-config/rules/unicorn`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js)
 
 ### [flowtype](https://www.npmjs.org/package/eslint-plugin-flowtype) & [flowtype-errors](https://www.npmjs.org/package/eslint-plugin-flowtype-errors)
 
 - *flowtype*: [Flow](https://flow.org) specific linting rules.
 - *flowtype-errors*: Runs your code through Flow and passes the type check errors as linting errors. Any editor that has ESLint support now supports Flow.
 
-- not in peerDependencies: `npm install --save-dev eslint-plugin-flowtype flowtype-errors`
-- not loaded in any bundle, need to extend it separately:
-    ```js
-    ...
-    "extends": [
-        "@leeruniek/eslint-config/rules/frontend",
-        "@leeruniek/eslint-config/rules/flow",
-    ],
-    ...
-    ```
-
-- rules in [`@leeruniek/eslint-config/rules/flow`](https://github.com/leeruniek/eslint-config/blob/master/rules/flow.js)
+- rules in [`@leeruniek/eslint-config/rules/flow`](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js)
 
 ### [html](https://www.npmjs.org/package/eslint-plugin-html)
 
 Allows linting and fixing inline scripts contained in HTML files.
 
 - not in peerDependencies: `npm install --save-dev eslint-plugin-html`
-- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) bundle
-- rules in [`@leeruniek/eslint-config/rules/html`](https://github.com/leeruniek/eslint-config/blob/master/rules/html.js)
+- loaded in [`react`](https://github.com/Leeruniek/eslint-config/blob/master/targets/react) bundle
+- rules in [`@leeruniek/eslint-config/rules/html`](https://github.com/Leeruniek/eslint-config/blob/master/rules/html.js)
 
 ### [react](https://www.npmjs.org/package/eslint-plugin-react)
 
 React specific linting rules.
 
 - not in peerDependencies: `npm install --save-dev eslint-plugin-react`
-- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) bundle
-- rules in [`@leeruniek/eslint-config/rules/react`](https://github.com/leeruniek/eslint-config/blob/master/rules/react.js)
+- loaded in [`react`](https://github.com/Leeruniek/eslint-config/blob/master/targets/react) bundle
+- rules in [`@leeruniek/eslint-config/rules/react`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js)
 
 ### [jsx-control-statements](https://github.com/vkbansal/eslint-plugin-jsx-control-statements)
 
 ESLint rules for [JSX-Control-Statements](https://github.com/AlexGilleran/jsx-control-statements) babel plugin (Neater If and For for React JSX).
 
 - not in peerDependencies: `npm install --save-dev eslint-plugin-jsx-control-statements`
-- loaded in [`frontend`](https://github.com/codemachiner/eslint-config/blob/master/rules/frontend.js) bundle
-- rules in [`@codemachiner/eslint-config/rules/react`](https://github.com/codemachiner/eslint-config/blob/master/rules/react.js#L104)
+- loaded in [`react`](https://github.com/Leeruniek/eslint-config/blob/master/targets/react) bundle
+- rules in [`@leeruniek/eslint-config/rules/react`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L104)
 
 ### [compat](https://www.npmjs.org/package/eslint-plugin-compat)
 
@@ -189,15 +191,15 @@ Lint the browser compatibility of your code (using [caniuse](http://caniuse.com/
 ```
 
 - not in peerDependencies: `npm install --save-dev eslint-plugin-compat`
-- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) bundle
-- rules in [`@leeruniek/eslint-config/rules/compat`](https://github.com/leeruniek/eslint-config/blob/master/rules/compat.js)
+- loaded in [`react`](https://github.com/Leeruniek/eslint-config/blob/master/targets/react) bundle
+- rules in [`@leeruniek/eslint-config/rules/compat`](https://github.com/Leeruniek/eslint-config/blob/master/rules/compat.js)
 
 ### [no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name)
 
 In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead.
 This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
 
-- loaded in [`frontend`](https://github.com/leeruniek/eslint-config/blob/master/rules/frontend.js) & [`backend`](https://github.com/leeruniek/eslint-config/blob/master/rules/backend.js) bundles
+- loaded in [`react`](https://github.com/Leeruniek/eslint-config/blob/master/targets/react) & [`node`](https://github.com/Leeruniek/eslint-config/blob/master/targets/node.js) bundles
 
 ## Using with SublimeText
 
@@ -312,7 +314,7 @@ module.exports = {
     root  : true,
     parser: "babel-eslint",
 
-    extends: [ "@leeruniek/eslint-config/rules/frontend" ],
+    extends: [ "@leeruniek/eslint-config/targets/react" ],
 
     settings: {
         // Use webpack to resolve modules in imports
@@ -359,6 +361,20 @@ module.exports = {
 
 History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-config/blob/master/CHANGELOG.md)
 
-## 2.9.7 - 14 September 2018
+## 3.0.0 - 8 October 2018
 
-Bumped versions
+Restructuring bundles as "target" files. Supporting React and Node.js, with optional Flow support.
+
+Delegating all stylistic rules to [`prettier`](https://prettier.io) via [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) and [`eslint-plugin-prettier`](https://github.com/prettier/eslint-plugin-prettier).
+
+### Added
+
+- unicorn: [`unicorn/no-process-exit`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js#L12), [`unicorn/number-literal-case`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js#L20), [`unicorn/no-fn-reference-in-iterator`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js#L23), [`unicorn/import-index`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js#L29), [`unicorn/prefer-spread`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js#L36), [`unicorn/prefer-add-event-listener`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js#L45), [`unicorn/prefer-exponentiation-operator`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js#L48)
+- react: [`react/void-dom-elements-no-children`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L12), [`react/prefer-es6-class`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L15), [`react/no-unused-prop-types`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L18), [`react/no-unused-state`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L21), [`react/no-unsafe`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L24), [`react/no-will-update-set-state`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L27), [`react/forbid-dom-props`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L30), [`react/forbid-prop-types`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L32), [`react/jsx-filename-extension`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L40), [`react/jsx-max-depth`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L43)
+- flowtype-errors: [`flowtype-errors/type-import-style`](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js#L34), [`flowtype-errors/require-types-at-top`](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js#L40), [`flowtype-errors/no-unused-expressions`](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js#L47), [`flowtype-errors/array-style-complex-type`](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js#L50), [`flowtype-errors/array-style-simple-type`](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js#L53)
+
+### Changed
+
+- [`jsx-control-statements/jsx-use-if-tag`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L339) from "error" -> "warn"
+- [`react/sort-comp`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L247) added `getDerivedStateFromProps` and `componentDidCatch`
+- [`flowtype/require-return-type`](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js#L) from "off" -> "error"

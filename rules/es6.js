@@ -3,19 +3,10 @@
 module.exports = {
   rules: {
     // Require braces in arrow function body
-    "arrow-body-style": [ "error", "as-needed" ],
-
-    // Require parens in arrow function arguments
-    "arrow-parens": [ "error", "as-needed" ],
+    "arrow-body-style": ["error", "as-needed"],
 
     // Verify super() callings in constructors
     "constructor-super": 0,
-
-    // Enforce the spacing around the * in generator functions
-    "generator-star-spacing": 0,
-
-    // Disallow arrow functions where a condition is expected
-    "no-arrow-condition": 0,
 
     // Disallow modifying variables of class declarations
     "no-class-assign": 0,
@@ -33,7 +24,7 @@ module.exports = {
     "no-var": "error",
 
     // Require method and property shorthand syntax for object literals
-    "object-shorthand": [ "warn", "always" ],
+    "object-shorthand": ["warn", "always"],
 
     // Suggest using arrow functions as callbacks
     "prefer-arrow-callback": "warn",
