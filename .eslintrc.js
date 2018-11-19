@@ -1,5 +1,8 @@
 /* eslint-env node */
 
 module.exports = {
-  extends: ["./targets/react.js"],
+  extends: [
+    "./targets/node.js",
+    "./rules/flow.js"
+  ],
 }

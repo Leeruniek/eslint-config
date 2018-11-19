@@ -27,36 +27,36 @@ module.exports = {
    */
 
   rules: {
-    /*
-     * Enforces a particular style for type imports: 'declaration' style
-     * import type {T, U, V} from '...';
-     */
-    "flowtype-errors/type-import-style": ["error", "declaration"],
+    // Show flow errors
+    "flowtype-errors/show-errors": "error",
 
     /*
      * Requires all type declarations to be at the top of the file, after any
      * import declarations.
      */
-    "flowtype-errors/require-types-at-top": "never",
+    "flowtype/require-types-at-top": "off",
 
     /*
      * An extension of ESLint's no-unused-expressions. This rule ignores type
      * cast expressions, but otherwise behaves the same as ESLint's
      * no-unused-expressions.
      */
-    "flowtype-errors/no-unused-expressions": "error",
+    "flowtype/no-unused-expressions": "error",
 
     // Type[] instead of Array<Type>
-    "flowtype-errors/array-style-complex-type": ["error", "shorthand"],
+    "flowtype/array-style-complex-type": ["error", "shorthand"],
 
     // string[] instead of Array<string>
-    "flowtype-errors/array-style-simple-type": ["error", "shorthand"],
-
-    // Show flow errors
-    "flowtype-errors/show-errors": "error",
+    "flowtype/array-style-simple-type": ["error", "shorthand"],
 
     // Error if flow coverage is below 80%
     "flowtype-errors/enforce-min-coverage": ["error", 80],
+
+    /*
+     * Enforces a particular style for type imports: 'declaration' style
+     * import type {T, U, V} from '...';
+     */
+    "flowtype/type-import-style": ["error", "declaration"],
 
     /*
      * Enforces that `@flow` annotations be followed by an empty line,

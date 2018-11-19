@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## 3.0.2 - 19 November 2018
+
+### Change
+
+- Fix flow rules assing to `flowtype-errors` instead of `flowtype`
+
 ## [3.0.0] - 8 October 2018
 
 Restructuring bundles as "target" files. Supporting React and Node.js, with optional Flow support.
@@ -17,15 +23,15 @@ Delegating all stylistic rules to [`prettier`](https://prettier.io) via [`eslint
 
 ### Added
 
-- unicorn: [`unicorn/no-process-exit`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js#L12), [`unicorn/number-literal-case`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js#L20), [`unicorn/no-fn-reference-in-iterator`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js#L23), [`unicorn/import-index`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js#L29), [`unicorn/prefer-spread`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js#L36), [`unicorn/prefer-add-event-listener`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js#L45), [`unicorn/prefer-exponentiation-operator`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js#L48)
-- react: [`react/void-dom-elements-no-children`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L12), [`react/prefer-es6-class`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L15), [`react/no-unused-prop-types`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L18), [`react/no-unused-state`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L21), [`react/no-unsafe`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L24), [`react/no-will-update-set-state`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L27), [`react/forbid-dom-props`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L30), [`react/forbid-prop-types`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L32), [`react/jsx-filename-extension`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L40), [`react/jsx-max-depth`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L43)
-- flowtype-errors: [`flowtype-errors/type-import-style`](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js#L34), [`flowtype-errors/require-types-at-top`](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js#L40), [`flowtype-errors/no-unused-expressions`](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js#L47), [`flowtype-errors/array-style-complex-type`](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js#L50), [`flowtype-errors/array-style-simple-type`](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js#L53)
+- unicorn: [`unicorn/no-process-exit`](/rules/unicorn.js#L12), [`unicorn/number-literal-case`](/rules/unicorn.js#L20), [`unicorn/no-fn-reference-in-iterator`](/rules/unicorn.js#L23), [`unicorn/import-index`](/rules/unicorn.js#L29), [`unicorn/prefer-spread`](/rules/unicorn.js#L36), [`unicorn/prefer-add-event-listener`](/rules/unicorn.js#L45), [`unicorn/prefer-exponentiation-operator`](/rules/unicorn.js#L48)
+- react: [`react/void-dom-elements-no-children`](/rules/react.js#L12), [`react/prefer-es6-class`](/rules/react.js#L15), [`react/no-unused-prop-types`](/rules/react.js#L18), [`react/no-unused-state`](/rules/react.js#L21), [`react/no-unsafe`](/rules/react.js#L24), [`react/no-will-update-set-state`](/rules/react.js#L27), [`react/forbid-dom-props`](/rules/react.js#L30), [`react/forbid-prop-types`](/rules/react.js#L32), [`react/jsx-filename-extension`](/rules/react.js#L40), [`react/jsx-max-depth`](/rules/react.js#L43)
+- flowtype-errors: [`flowtype-errors/type-import-style`](/rules/flow.js#L34), [`flowtype-errors/require-types-at-top`](/rules/flow.js#L40), [`flowtype-errors/no-unused-expressions`](/rules/flow.js#L47), [`flowtype-errors/array-style-complex-type`](/rules/flow.js#L50), [`flowtype-errors/array-style-simple-type`](/rules/flow.js#L53)
 
 ### Changed
 
-- [`jsx-control-statements/jsx-use-if-tag`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L339) from "error" -> "warn"
-- [`react/sort-comp`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L247) added `getDerivedStateFromProps` and `componentDidCatch`
-- [`flowtype/require-return-type`](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js#L) from "off" -> "error"
+- [`jsx-control-statements/jsx-use-if-tag`](/rules/react.js#L339) from "error" -> "warn"
+- [`react/sort-comp`](/rules/react.js#L247) added `getDerivedStateFromProps` and `componentDidCatch`
+- [`flowtype/require-return-type`](/rules/flow.js#L) from "off" -> "error"
 
 ## [2.9.7] - 14 September 2018
 
@@ -56,49 +62,49 @@ Bumped versions
 
 ### Added
 
-- [`camelcase`](https://github.com/Leeruniek/eslint-config/blob/master/rules/style.js#L35)
+- [`camelcase`](/rules/style.js#L35)
 
 ## [2.9.3] - 2 December 2017
 
 ### Added
 
-- [`react/jsx-one-expression-per-line`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L312)
-- [`react/destructuring-assignment`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L318)
-- [`react/no-access-state-in-setstate`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L323)
-- [`react/button-has-type`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L328)
-- [`react/jsx-wrap-multilines`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L333)
+- [`react/jsx-one-expression-per-line`](/rules/react.js#L312)
+- [`react/destructuring-assignment`](/rules/react.js#L318)
+- [`react/no-access-state-in-setstate`](/rules/react.js#L323)
+- [`react/button-has-type`](/rules/react.js#L328)
+- [`react/jsx-wrap-multilines`](/rules/react.js#L333)
 
 ### Changed
 
-- [`react/sort-comp`](https://github.com/Leeruniek/eslint-config/blob/master/rules/rules.js#L252)
-- [`react/require-default-props`](https://github.com/Leeruniek/eslint-config/blob/master/rules/rules.js#L223)
+- [`react/sort-comp`](/rules/rules.js#L252)
+- [`react/require-default-props`](/rules/rules.js#L223)
 
 ## [2.9.2] - 12 November 2017
 
 ### Added
 
-- configed all [`rules/unicorn`](https://github.com/Leeruniek/eslint-config/blob/master/rules/unicorn.js), not just `fileCase`
-- [`import/exports-last`](https://github.com/Leeruniek/eslint-config/blob/master/rules/import.js#L86) - all exports are declared at the bottom of the file
-- [`jest/prefer-to-have-length`](https://github.com/Leeruniek/eslint-config/blob/master/rules/jest.js#L50) - use `toHaveLength`, not check `.length`
+- configed all [`rules/unicorn`](/rules/unicorn.js), not just `fileCase`
+- [`import/exports-last`](/rules/import.js#L86) - all exports are declared at the bottom of the file
+- [`jest/prefer-to-have-length`](/rules/jest.js#L50) - use `toHaveLength`, not check `.length`
 
 ### Changed
 
-- [`no-unused-expressions`](https://github.com/Leeruniek/eslint-config/blob/master/rules/best-practices.js#L176)
+- [`no-unused-expressions`](/rules/best-practices.js#L176)
 
 ## [2.9.1] - 17 October 2017
 
 ### Added
 
-- [`import/ignore`](https://github.com/Leeruniek/eslint-config/blob/master/rules/import.js#L11) to ignore css/scss/sass files
-- [`import/extensions`](https://github.com/Leeruniek/eslint-config/blob/master/rules/import.js#L77) `.js` and `['.js', '.jsx']` if [react](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L361) is loaded.
+- [`import/ignore`](/rules/import.js#L11) to ignore css/scss/sass files
+- [`import/extensions`](/rules/import.js#L77) `.js` and `['.js', '.jsx']` if [react](/rules/react.js#L361) is loaded.
 
 ### Changed
 
-- [`react/jsx-no-comment-textnodes`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L30)
-- [`object-property-newline`](https://github.com/Leeruniek/eslint-config/blob/master/rules/style.js#L250)
-- [`no-multi-spaces`](https://github.com/Leeruniek/eslint-config/blob/master/rules/best.practices.js#L115)
-- [`no-unused-vars`](https://github.com/Leeruniek/eslint-config/blob/master/rules/variables.js#L42)
-- [`space-before-function-paren`](https://github.com/Leeruniek/eslint-config/blob/master/rules/style.js#L329)
+- [`react/jsx-no-comment-textnodes`](/rules/react.js#L30)
+- [`object-property-newline`](/rules/style.js#L250)
+- [`no-multi-spaces`](/rules/best.practices.js#L115)
+- [`no-unused-vars`](/rules/variables.js#L42)
+- [`space-before-function-paren`](/rules/style.js#L329)
 
 ## [2.9.0] - 16 October 2017
 
@@ -106,27 +112,27 @@ Update packages and new rules for react & promise
 
 ### Added
 
-- [`react/jsx-curly-brace-presence`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L205)
-- [`promise/no-return-in-finally`](https://github.com/Leeruniek/eslint-config/blob/master/rules/promise.js#L65)
+- [`react/jsx-curly-brace-presence`](/rules/react.js#L205)
+- [`promise/no-return-in-finally`](/rules/promise.js#L65)
 
 ### Changed
 
-- [`no-else-return`](https://github.com/Leeruniek/eslint-config/blob/master/rules/best.practices.js#L55)
-- [`array-bracket-newline`](https://github.com/Leeruniek/eslint-config/blob/master/rules/style.js#L10)
+- [`no-else-return`](/rules/best.practices.js#L55)
+- [`array-bracket-newline`](/rules/style.js#L10)
 
 ## [2.8.3] - 24 September 2017
 
 ### Changed
 
-- updated [`react`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js) rules with:
-    - [`react/sort-comp`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L252) - predefined order of component methods (eslint-react [rule](https://github.com/yannickcr/eslint-plugin-react/blob/HEAD/docs/rules/sort-comp.md))
-    - [`react/jsx-no-bind`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L306) - no longer bind function in render (eslint-react [rule](https://github.com/yannickcr/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-bind.md))
+- updated [`react`](/rules/react.js) rules with:
+    - [`react/sort-comp`](/rules/react.js#L252) - predefined order of component methods (eslint-react [rule](https://github.com/yannickcr/eslint-plugin-react/blob/HEAD/docs/rules/sort-comp.md))
+    - [`react/jsx-no-bind`](/rules/react.js#L306) - no longer bind function in render (eslint-react [rule](https://github.com/yannickcr/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-bind.md))
 
 ## [2.8.2] - 24 September 2017
 
 ### Changed
 
-- updated [`react`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L125) with more jsx style rules
+- updated [`react`](/rules/react.js#L125) with more jsx style rules
 
 ## [2.8.1] - 23 September 2017
 
@@ -134,11 +140,11 @@ Updated packages & added `eslint-plugin-jsx-control-statements`
 
 ### Added
 
-- New [`jsx-control-statements`](https://github.com/Leeruniek/eslint-config#jsx-control-statements) to the [react](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L104) rules.
+- New [`jsx-control-statements`](https://github.com/Leeruniek/eslint-config#jsx-control-statements) to the [react](/rules/react.js#L104) rules.
 
 ### Changed
 
-- [`react/jsx-no-undef`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L36) - from v7, `eslint-plugin-react` does not check globals by default anymore and need to be set explicitly.
+- [`react/jsx-no-undef`](/rules/react.js#L36) - from v7, `eslint-plugin-react` does not check globals by default anymore and need to be set explicitly.
 
 ## [2.8.0] - 18 September 2017
 
@@ -150,22 +156,22 @@ Removed Flow from both bundles, need to be loaded separately
 
 ### Added
 
-- React [`boolean-prop-naming`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L85), [`no-typos`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L93) and [`jsx-boolean-value`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js#L40)
+- React [`boolean-prop-naming`](/rules/react.js#L85), [`no-typos`](/rules/react.js#L93) and [`jsx-boolean-value`](/rules/react.js#L40)
 
 ### Changed
 
-- Removed [`flow`](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js) from both bundles. Need to include it [separately](https://github.com/Leeruniek/eslint-config#flowtype--flowtype-errors)
+- Removed [`flow`](/rules/flow.js) from both bundles. Need to include it [separately](https://github.com/Leeruniek/eslint-config#flowtype--flowtype-errors)
 
 ## [2.7.1] - 4 August 2017
 
 ### Added
 
-- New [`eslint-plugin-flowtype-errors`](https://github.com/Leeruniek/eslint-config#eslint-plugin-flowtype-errors) to the [flow](https://github.com/Leeruniek/eslint-config/blob/master/rules/flow.js#L4) config. It runs flow  and passes the errors as linting error.
+- New [`eslint-plugin-flowtype-errors`](https://github.com/Leeruniek/eslint-config#eslint-plugin-flowtype-errors) to the [flow](/rules/flow.js#L4) config. It runs flow  and passes the errors as linting error.
 
 ### Changed
 
-- [`prefer-destructuring`](https://github.com/Leeruniek/eslint-config/blob/master/rules/backend.js#62) - set rule to warn and disabled for objects (was a nuisance)
-- Removed [`jest`](https://github.com/Leeruniek/eslint-config/blob/master/rules/jest.js) from frontend bundle. Need to include it [separately](https://github.com/Leeruniek/eslint-config#eslint-plugin-jest)
+- [`prefer-destructuring`](/rules/backend.js#62) - set rule to warn and disabled for objects (was a nuisance)
+- Removed [`jest`](/rules/jest.js) from frontend bundle. Need to include it [separately](https://github.com/Leeruniek/eslint-config#eslint-plugin-jest)
 
 ## [2.6.0] - 23 July 2017
 
@@ -173,12 +179,12 @@ Updated to [ESLint 4.3](http://eslint.org/blog/2017/07/eslint-v4.3.0-released) a
 
 ### Added
 
-- Plugin [`eslint-plugin-jest`](https://www.npmjs.org/package/eslint-plugin-jest) with rules in [`/rules/jest.js`](https://github.com/Leeruniek/eslint-config/blob/master/rules/jest.js) and part of [`frontend`](https://github.com/Leeruniek/eslint-config/blob/master/rules/frontend.js#L24)
+- Plugin [`eslint-plugin-jest`](https://www.npmjs.org/package/eslint-plugin-jest) with rules in [`/rules/jest.js`](/rules/jest.js) and part of [`frontend`](/rules/frontend.js#L24)
 - ESLint rule [`prefer-numeric-literals`](http://eslint.org/docs/rules/prefer-numeric-literals): Disllow parseInt() and Number.parseInt() in favor of binary, octal, and hexadecimal literals
-    - Defined in [`errors.js`](https://github.com/Leeruniek/eslint-config/blob/master/rules/errors.js#L115)
+    - Defined in [`errors.js`](/rules/errors.js#L115)
     - Current value: `"prefer-numeric-literals": "error"`
 - ESLint rule [`prefer-destructuring`](http://eslint.org/docs/rules/prefer-destructuring): Prefer destructuring from arrays and objects.
-    - Defined in [`variables.js`](https://github.com/Leeruniek/eslint-config/blob/master/rules/variables.js#L63)
+    - Defined in [`variables.js`](/rules/variables.js#L63)
     - Current value:
         ```javascript
         "prefer-destructuring": [
@@ -217,7 +223,7 @@ Updated to [ESLint 4.3](http://eslint.org/blog/2017/07/eslint-v4.3.0-released) a
 
 ### Changed
 
-Updated [`rules/style.js`](https://github.com/Leeruniek/eslint-config/blob/master/rules/style.js#L263):
+Updated [`rules/style.js`](/rules/style.js#L263):
 
 - changed [`object-curly-newline`](http://eslint.org/docs/rules/object-curly-newline)
 - added [`object-property-newline`](http://eslint.org/docs/rules/object-property-newline)
@@ -260,7 +266,7 @@ Added [`eslint-plugin-compat`](https://www.npmjs.com/package/eslint-plugin-compa
 
 ### Added
 
-- `eslint-plugin-compat` with rules in [`/rules/compat.js`](https://github.com/Leeruniek/eslint-config/blob/master/rules/compat.js)
+- `eslint-plugin-compat` with rules in [`/rules/compat.js`](/rules/compat.js)
 
 ### Changed
 
@@ -272,20 +278,20 @@ React support
 
 ### Added
 
-- `eslint-plugin-react` with recommended rules in [`/rules/react.js`](https://github.com/Leeruniek/eslint-config/blob/master/rules/react.js)
+- `eslint-plugin-react` with recommended rules in [`/rules/react.js`](/rules/react.js)
 
 ## 2.3.2 - 11 July 2017
 
 ### Added
 
 - ESLint 4.2: new rule [`getter-return`](http://eslint.org/docs/rules/getter-return) -  Enforces that a return statement is present in property getters.
-    - Defined in [`error.js`](https://github.com/Leeruniek/eslint-config/blob/master/rules/errors.js)
+    - Defined in [`error.js`](/rules/errors.js)
     - Current value: `"getter-return": "error"`
 
 ### Changed
 
 - ESLint 4.2 allows [`no-sync`](http://eslint.org/docs/rules/no-sync) using sync methods on top level.
-    - Defined in [`node.js`](https://github.com/Leeruniek/eslint-config/blob/master/rules/node.js)
+    - Defined in [`node.js`](/rules/node.js)
     - Current value:
 
     ```javascript
@@ -296,26 +302,28 @@ React support
     ],
     ```
 - [`no-unexpected-multiline`](http://eslint.org/docs/rules/no-unexpected-multiline) to protect against edge cases of not using semicolons
-    - Defined in [`error.js`](https://github.com/Leeruniek/eslint-config/blob/master/rules/errors.js):
+    - Defined in [`error.js`](/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/Leeruniek/eslint-rules/compare/v3.0.0...HEAD
-[3.0.0]: https://github.com/Leeruniek/eslint-rules/compare/v2.9.7...v3.0.0
-[2.9.7]: https://github.com/Leeruniek/eslint-rules/compare/v2.9.6...v2.9.7
-[2.9.6]: https://github.com/Leeruniek/eslint-rules/compare/v2.9.5...v2.9.6
-[2.9.5]: https://github.com/Leeruniek/eslint-rules/compare/v2.9.4...v2.9.5
-[2.9.4]: https://github.com/Leeruniek/eslint-rules/compare/v2.9.3...v2.9.4
-[2.9.3]: https://github.com/Leeruniek/eslint-rules/compare/v2.9.2...v2.9.3
-[2.9.2]: https://github.com/Leeruniek/eslint-rules/compare/v2.9.0...v2.9.2
-[2.9.1]: https://github.com/Leeruniek/eslint-rules/compare/v2.9.0...v2.9.1
-[2.9.0]: https://github.com/Leeruniek/eslint-rules/compare/v2.8.3...v2.9.0
-[2.8.3]: https://github.com/Leeruniek/eslint-rules/compare/v2.8.2...v2.8.3
-[2.8.2]: https://github.com/Leeruniek/eslint-rules/compare/v2.8.1...v2.8.2
-[2.8.1]: https://github.com/Leeruniek/eslint-rules/compare/v2.8.0...v2.8.1
-[2.8.0]: https://github.com/Leeruniek/eslint-rules/compare/v2.7.2...v2.8.0
-[2.7.2]: https://github.com/Leeruniek/eslint-rules/compare/v2.7.1...v2.7.2
-[2.7.1]: https://github.com/Leeruniek/eslint-rules/compare/v2.6.0...v2.7.1
-[2.6.0]: https://github.com/Leeruniek/eslint-rules/compare/v2.5.1...v2.6.0
-[2.5.1]: https://github.com/Leeruniek/eslint-rules/compare/v2.5.0...v2.5.1
-[2.5.0]: https://github.com/Leeruniek/eslint-rules/compare/v2.4.0...v2.5.0
-[2.4.0]: https://github.com/Leeruniek/eslint-rules/compare/v2.3.2...v2.4.0
+[Unreleased]: https://github.com/leeruniek/eslint-rules/compare/v3.0.2...HEAD
+
+[3.0.2]: https://github.com/leeruniek/eslint-rules/compare/v3.0.0...v3.0.2
+[3.0.0]: https://github.com/leeruniek/eslint-rules/compare/v2.9.7...v3.0.0
+[2.9.7]: https://github.com/leeruniek/eslint-rules/compare/v2.9.6...v2.9.7
+[2.9.6]: https://github.com/leeruniek/eslint-rules/compare/v2.9.5...v2.9.6
+[2.9.5]: https://github.com/leeruniek/eslint-rules/compare/v2.9.4...v2.9.5
+[2.9.4]: https://github.com/leeruniek/eslint-rules/compare/v2.9.3...v2.9.4
+[2.9.3]: https://github.com/leeruniek/eslint-rules/compare/v2.9.2...v2.9.3
+[2.9.2]: https://github.com/leeruniek/eslint-rules/compare/v2.9.0...v2.9.2
+[2.9.1]: https://github.com/leeruniek/eslint-rules/compare/v2.9.0...v2.9.1
+[2.9.0]: https://github.com/leeruniek/eslint-rules/compare/v2.8.3...v2.9.0
+[2.8.3]: https://github.com/leeruniek/eslint-rules/compare/v2.8.2...v2.8.3
+[2.8.2]: https://github.com/leeruniek/eslint-rules/compare/v2.8.1...v2.8.2
+[2.8.1]: https://github.com/leeruniek/eslint-rules/compare/v2.8.0...v2.8.1
+[2.8.0]: https://github.com/leeruniek/eslint-rules/compare/v2.7.2...v2.8.0
+[2.7.2]: https://github.com/leeruniek/eslint-rules/compare/v2.7.1...v2.7.2
+[2.7.1]: https://github.com/leeruniek/eslint-rules/compare/v2.6.0...v2.7.1
+[2.6.0]: https://github.com/leeruniek/eslint-rules/compare/v2.5.1...v2.6.0
+[2.5.1]: https://github.com/leeruniek/eslint-rules/compare/v2.5.0...v2.5.1
+[2.5.0]: https://github.com/leeruniek/eslint-rules/compare/v2.4.0...v2.5.0
+[2.4.0]: https://github.com/leeruniek/eslint-rules/compare/v2.3.2...v2.4.0
