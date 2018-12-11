@@ -19,10 +19,9 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Install](#install)
 - [Use](#use)
 - [Inside](#inside)
-- [Example of `.eslintrc`](#example-of-eslintrc)
+- [Example config](#example-config)
 - [Changelog](#changelog)
-- [3.0.2 - 19 November 2018](#302---19-november-2018)
-    - [Change](#change)
+- [4.0.0 - 11 December 2018](#400---11-december-2018)
 
 <!-- /MarkdownTOC -->
 
@@ -39,15 +38,15 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^5.9.0",
+    "eslint": "^5.10.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-json": "^1.2.1",
+    "eslint-plugin-json": "^1.3.2",
     "eslint-plugin-no-inferred-method-name": "^1.0.2",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-unicorn": "^6.0.1",
-    "prettier": "^1.15.2"
+    "prettier": "^1.15.3"
 }
 ...
 ```
@@ -59,33 +58,76 @@ Add the `react` or `node` target file in your `.eslintrc` file:
 ```javascript
 {
     "extends": [
-        // Node.js projects
+        // use for Node.js projects
         "@leeruniek/eslint-config/targets/node",
 
-        // React projects
+        // use for React projects
         "@leeruniek/eslint-config/targets/react",
 
         // optional Flow support
-        "@leeruniek/eslint-config/rules/flow"
+        "@leeruniek/eslint-config/rules/flow",
     ]
 }
 ```
 
-When using `react` target, besides the peer dependencies, also install `eslint-plugin-jsx-control-statements`
-
-```bash
-npm install --save-dev eslint-plugin-jsx-control-statements
-```
-
-When using with flow, Install `eslint-plugin-flowtype` and `eslint-plugin-flowtype-errors`.
+When including "@leeruniek/eslint-config/rules/flow"
 
 ```bash
 npm install --save-dev eslint-plugin-flowtype eslint-plugin-flowtype-errors
 ```
 
-Besides `.eslintrc`, [prettier](https://prettier.io) also needs configuring. Here's a recommended `.prettierrc` config:
+## Inside
 
-```json
+- [eslint-plugin-import](https://www.npmjs.org/package/eslint-plugin-import) - Support for ES2015+ (ES6+) import/export syntax
+- [eslint-plugin-promise](https://www.npmjs.org/package/eslint-plugin-promise) - Enforce best practices for JavaScript promises
+- [eslint-plugin-unicorn](https://www.npmjs.org/package/eslint-plugin-unicorn) - Various awesome ESLint rules
+- [eslint-plugin-flowtype](https://www.npmjs.org/package/eslint-plugin-flowtype) - [Flow](https://flow.org) specific linting rules
+- [eslint-plugin-flowtype-errors](https://www.npmjs.org/package/eslint-plugin-flowtype-errors) - Runs your code through Flow and passes the type check errors as linting errors. Any editor that has ESLint support now supports Flow
+- [eslint-plugin-html](https://www.npmjs.org/package/eslint-plugin-html) - Allows linting and fixing inline scripts contained in HTML files
+- [eslint-plugin-react](https://www.npmjs.org/package/eslint-plugin-react) - React specific linting rules
+- [eslint-plugin-compat](https://www.npmjs.org/package/eslint-plugin-compat) - Lint the browser compatibility of your code (using [caniuse](http://caniuse.com/)). Uses `browserslist` definition in your `package.json`.
+- [eslint-plugin-no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name) - In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead. This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
+
+## Example config
+
+Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-import-resolver-webpack`](https://www.npmjs.com/package/eslint-import-resolver-webpack)
+
+`.eslintrc`
+
+```js
+{
+    "root"  : true,
+    "parser": "babel-eslint",
+
+    "extends": [ "@leeruniek/eslint-config/targets/react" ],
+
+    "settings": {
+        // Use webpack to resolve modules in imports
+        "import/resolver": {
+            "webpack": {
+                "config": "./webpack.config.js",
+            },
+        },
+
+        // Recommended if you use eslint_d
+        "import/cache": {
+            "lifetime": 5,
+        },
+
+        // List of regex strings that, if matched by a path, will not report
+        // the matching module if no exports are found.
+        "import/ignore": [ "\\.(sass|scss|less|css)$" ],
+    },
+
+    // Custom rules
+    "rules": {
+    },
+}
+```
+
+`.prettierrc`
+
+```js
 {
   "semi": false,
   "printWidth": 80,
@@ -99,69 +141,23 @@ Besides `.eslintrc`, [prettier](https://prettier.io) also needs configuring. Her
 }
 ```
 
-## Inside
-
-- [eslint-plugin-import](https://www.npmjs.org/package/eslint-plugin-import) - Support for ES2015+ (ES6+) import/export syntax
-- [eslint-plugin-promise](https://www.npmjs.org/package/eslint-plugin-promise) - Enforce best practices for JavaScript promises
-- [eslint-plugin-unicorn](https://www.npmjs.org/package/eslint-plugin-unicorn) - Various awesome ESLint rules
-- [eslint-plugin-flowtype](https://www.npmjs.org/package/eslint-plugin-flowtype) - [Flow](https://flow.org) specific linting rules
-- [eslint-plugin-flowtype-errors](https://www.npmjs.org/package/eslint-plugin-flowtype-errors) - Runs your code through Flow and passes the type check errors as linting errors. Any editor that has ESLint support now supports Flow
-- [eslint-plugin-html](https://www.npmjs.org/package/eslint-plugin-html) - Allows linting and fixing inline scripts contained in HTML files
-- [eslint-plugin-react](https://www.npmjs.org/package/eslint-plugin-react) - React specific linting rules
-- [eslint-plugin-jsx-control-statements](https://github.com/vkbansal/eslint-plugin-jsx-control-statements) - ESLint rules for [JSX-Control-Statements](https://github.com/AlexGilleran/jsx-control-statements) babel plugin (If and For pseudo components)
-- [eslint-plugin-compat](https://www.npmjs.org/package/eslint-plugin-compat) - Lint the browser compatibility of your code (using [caniuse](http://caniuse.com/)). Uses `browserslist` definition in your `package.json`.
-- [eslint-plugin-no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name) - In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead. This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
-
-## Example of `.eslintrc`
-
-Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-import-resolver-webpack`](https://www.npmjs.com/package/eslint-import-resolver-webpack)
-
-```javascript
-/* eslint-env node */
-
-module.exports = {
-    root  : true,
-    parser: "babel-eslint",
-
-    extends: [ "@leeruniek/eslint-config/targets/react" ],
-
-    settings: {
-        // Use webpack to resolve modules in imports
-        "import/resolver": {
-            webpack: {
-                config: "./webpack.config.js",
-            },
-        },
-
-        // Recommended if you use eslint_d
-        "import/cache": {
-            lifetime: 5,
-        },
-
-        // A list of regex strings that, if matched by a path, will not report
-        // the matching module if no exports are found.
-        "import/ignore": [ "\.(sass|scss|less|css)$" ],
-    },
-
-    // Add your custom rules here
-    rules: {
-        // Don"t require .jsx extension when importing
-        "import/extensions": [
-            "error", "always", {
-                js : "never",
-                jsx: "never",
-            },
-        ],
-    },
-}
-```
-
 ## Changelog
 
-History of all changes in [CHANGELOG.md](/CHANGELOG.md)
+History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-config/blob/master/CHANGELOG.md)
 
-## 3.0.2 - 19 November 2018
+## 4.0.0 - 11 December 2018
 
-### Change
+#### Change
 
-- Fix flow rules assing to `flowtype-errors` instead of `flowtype`
+- Change flowtype/type-id-match to allow multiple starting uppercase letters
+- flowtype-errors/enforce-min-coverage lowered to 60. Makes learning curve easier
+- Remove style from react/forbid-dom-props
+
+#### Remove
+
+- Remove `jsx-control-statements` plugin. Adds too much complexity when using with `flow`
+- Disable [promise/always-return](rules/promise.js#L23)
+- Disable [`react/no-unused-prop-types`](rules/flow.js#L31) rule when using `flow`
+- Disable [`flowtype/require-exact-type`](rules/flow.js#L77) rule. Too strict and unrealistic
+- Disable [`unicorn/filename-case`](rules/unicorn.js#57) and [`unicorn/no-fn-reference-in-iterator`](rules/unicorn.js#L21)
+- Disable [`promise/prefer-await-to-then`](rules/promise.js#L58) and [`promise/prefer-await-to-callbacks`](rules/promise.js#L61)
