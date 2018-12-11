@@ -18,7 +18,7 @@ module.exports = {
     "unicorn/no-process-exit": "error",
 
     // Prevents passing a function reference directly to iterator methods
-    "unicorn/no-fn-reference-in-iterator": "error",
+    "unicorn/no-fn-reference-in-iterator": "off",
 
     /*
      * Enforces importing index file with . instead of ./, ./index or
@@ -54,12 +54,7 @@ module.exports = {
      *      foo-bar.test.js
      *      foo-bar.test-utils.js
      */
-    "unicorn/filename-case": [
-      "warn",
-      {
-        case: "kebabCase",
-      },
-    ],
+    "unicorn/filename-case": "off",
 
     // Enforce explicitly comparing the length property of a value
     "unicorn/explicit-length-check": [

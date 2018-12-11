@@ -5,7 +5,6 @@ module.exports = {
     browser: true,
     es6: true,
     node: false,
-    "jsx-control-statements/jsx-control-statements": true,
   },
 
   extends: [
@@ -40,14 +39,7 @@ module.exports = {
     sourceType: "module",
   },
 
-  plugins: [
-    "import",
-    "unicorn",
-    "react",
-    "jsx-control-statements",
-    "json",
-    "no-inferred-method-name",
-  ],
+  plugins: ["import", "unicorn", "react", "json", "no-inferred-method-name"],
 
   rules: {
     "prettier/prettier": "error",

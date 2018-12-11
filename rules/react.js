@@ -35,7 +35,7 @@ module.exports = {
     "react/prefer-es6-class": "error",
 
     // Prevent definitions of unused prop types
-    "react/no-unused-prop-types": "error",
+    "react/no-unused-prop-types": "off",
 
     // Prevent definitions of unused state
     "react/no-unused-state": "error",
@@ -47,7 +47,7 @@ module.exports = {
     "react/no-will-update-set-state": "error",
 
     // Forbid certain props on DOM Nodes
-    "react/forbid-dom-props": ["error", { forbid: ["style", "id"] }],
+    "react/forbid-dom-props": ["error", { forbid: ["id"] }],
 
     "react/forbid-prop-types": [
       "error",
@@ -326,53 +326,6 @@ module.exports = {
 
     // Prevent usage of button elements without an explicit type attribute
     "react/button-has-type": "error",
-
-    /*
-     * Choose tag is empty or does not have at least one When
-     * tag as child.
-     */
-    "jsx-control-statements/jsx-choose-not-empty": "error",
-
-    /*
-     * Warn if For tag is missing each attribute. And also marks the
-     * variable as defined.
-     */
-    "jsx-control-statements/jsx-for-require-each": "error",
-
-    /*
-     * Warn if For tag is missing of attribute.
-     */
-    "jsx-control-statements/jsx-for-require-of": "error",
-
-    /*
-     * Warn if If tag is missing condition attribute.
-     */
-    "jsx-control-statements/jsx-if-require-condition": "error",
-
-    /*
-     * Warn when Otherwise tag is used more than once inside Choose and is
-     * not last child.
-     */
-    "jsx-control-statements/jsx-otherwise-once-last": "error",
-
-    // Use If tag instead of ternary operator.
-    "jsx-control-statements/jsx-use-if-tag": "warn",
-
-    /*
-     * Warn if When tag is missing condition attribute.
-     */
-    "jsx-control-statements/jsx-when-require-condition": "error",
-
-    /*
-     * This rule is the same as the generic eslint no-undef rule
-     * (see http://eslint.org/docs/rules/no-undef) except with an
-     * exception built in for variables that are implicitly declared by
-     * <For> and <With> statements. Note that this includes no-undef's
-     * code and completely replaces it rather than supplementing it - if
-     * this rule is on, no-undef should be off. It is compatible with
-     * no-undef's options and global declarations.
-     */
-    "jsx-control-statements/jsx-jcs-no-undef": "error",
 
     "no-undef": "off",
 

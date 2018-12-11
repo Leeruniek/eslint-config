@@ -20,7 +20,7 @@ module.exports = {
      * We also allow someone to throw inside a then() which is essentially
      * the same as return Promise.reject().
      */
-    "promise/always-return": "error",
+    "promise/always-return": "off",
 
     /*
      * Ensure that inside a then() or a catch() we always return or throw
@@ -55,10 +55,10 @@ module.exports = {
     "promise/avoid-new": "warn",
 
     // Prefer await to then() for reading Promise values
-    "promise/prefer-await-to-then": "warn",
+    "promise/prefer-await-to-then": "off",
 
     // Prefer async/await to the callback pattern
-    "promise/prefer-await-to-callbacks": "warn",
+    "promise/prefer-await-to-callbacks": "off",
 
     /*
      * Disallow return statements inside a callback passed to finally(),
