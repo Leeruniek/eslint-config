@@ -22,6 +22,8 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 - [Example config](#example-config)
 - [Changelog](#changelog)
 - [4.0.0 - 11 December 2018](#400---11-december-2018)
+    - [Change](#change)
+    - [Remove](#remove)
 
 <!-- /MarkdownTOC -->
 
@@ -147,13 +149,13 @@ History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-con
 
 ## 4.0.0 - 11 December 2018
 
-#### Change
+### Change
 
 - Change flowtype/type-id-match to allow multiple starting uppercase letters
 - flowtype-errors/enforce-min-coverage lowered to 60. Makes learning curve easier
 - Remove style from react/forbid-dom-props
 
-#### Remove
+### Remove
 
 - Remove `jsx-control-statements` plugin. Adds too much complexity when using with `flow`
 - Disable [promise/always-return](rules/promise.js#L23)
