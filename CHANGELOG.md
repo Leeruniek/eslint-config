@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [4.1.0] - 23 January 2019
+
+### Remove
+
+- Remove `compat` plugin
+- Disable [no-unused-expressions](rules/best.practices.js#L7), [line-comment-position](rules/comments.js#18), [flowtype/type-import-style](rules/flow.js#L59), [flowtype/require-return-type](rules/flow.js#L114)
+
 ## [4.0.0] - 11 December 2018
 
 ### Change
@@ -322,8 +329,9 @@ React support
     - Defined in [`error.js`](/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/leeruniek/eslint-rules/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/leeruniek/eslint-rules/compare/v4.1.0...HEAD
 
+[4.1.0]: https://github.com/leeruniek/eslint-rules/compare/v4.0.0...v4.1.0
 [4.0.0]: https://github.com/leeruniek/eslint-rules/compare/v3.0.2...v4.0.0
 [3.0.2]: https://github.com/leeruniek/eslint-rules/compare/v3.0.0...v3.0.2
 [3.0.0]: https://github.com/leeruniek/eslint-rules/compare/v2.9.7...v3.0.0
