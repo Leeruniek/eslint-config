@@ -56,7 +56,7 @@ module.exports = {
      * Enforces a particular style for type imports: 'declaration' style
      * import type {T, U, V} from '...';
      */
-    "flowtype/type-import-style": ["error", "declaration"],
+    "flowtype/type-import-style": "off",
 
     /*
      * Enforces that `@flow` annotations be followed by an empty line,
@@ -111,7 +111,7 @@ module.exports = {
     "flowtype/require-parameter-type": "off",
 
     // Requires that functions have return type annotation.
-    "flowtype/require-return-type": "error",
+    "flowtype/require-return-type": "off",
 
     /*
      * This rule can optionally report missing or missed placed

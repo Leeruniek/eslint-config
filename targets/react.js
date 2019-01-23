@@ -11,7 +11,6 @@ module.exports = {
     ...[
       "../rules/best.practices",
       "../rules/comments",
-      "../rules/compat",
       "../rules/errors",
       "../rules/es6",
       "../rules/html",

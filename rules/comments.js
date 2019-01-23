@@ -16,12 +16,7 @@ module.exports = {
      * starting with the following words: eslint, jshint, jslint,
      * istanbul, global, exported, jscs, falls through.
      */
-    "line-comment-position": [
-      "error",
-      {
-        position: "above",
-      },
-    ],
+    "line-comment-position": "off",
 
     // Disallow usage of configurable warning terms in comments: e.g. todo
     "no-warning-comments": [

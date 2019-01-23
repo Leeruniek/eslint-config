@@ -159,13 +159,7 @@ module.exports = {
     "no-throw-literal": "error",
 
     // Disallow usage of expressions in statement position
-    "no-unused-expressions": [
-      "error",
-      {
-        allowShortCircuit: true,
-        allowTernary: true,
-      },
-    ],
+    "no-unused-expressions": "off",
 
     // Disallow unnecessary .call() and .apply()
     "no-useless-call": 0,
