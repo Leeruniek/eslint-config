@@ -27,6 +27,10 @@ module.exports = {
    */
 
   rules: {
+    // does not play well with
+    "react/default-props-match-prop-types": "off",
+    "react/require-default-props": "off",
+
     // Show flow errors
     "flowtype-errors/show-errors": "error",
 
@@ -41,7 +45,7 @@ module.exports = {
      * cast expressions, but otherwise behaves the same as ESLint's
      * no-unused-expressions.
      */
-    "flowtype/no-unused-expressions": "error",
+    "flowtype/no-unused-expressions": "off",
 
     // Type[] instead of Array<Type>
     "flowtype/array-style-complex-type": ["error", "shorthand"],
@@ -133,7 +137,7 @@ module.exports = {
     "flowtype/sort-keys": "off",
 
     // Enforces a consistent naming pattern for type aliases.
-    "flowtype/type-id-match": ["error", "^([A-Z]{1,}[a-z0-9]{0,})+Type$"],
+    "flowtype/type-id-match": ["error", "/^([A-Z]{1,}[a-z0-9]{0,})+$/"],
 
     /*
      * Marks Flow type alias declarations as used.
