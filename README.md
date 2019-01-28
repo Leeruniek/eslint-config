@@ -145,9 +145,13 @@ Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-impor
 
 History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-config/blob/master/CHANGELOG.md)
 
-### 4.1.0 - 23 January 2019
+### 4.2.0 - 28 January 2019
+
+#### Change
+
+- `promise/catch-or-return` to "warn"
+- `flowtype/type-id-match` no longer requires "Type" suffix 
 
 #### Remove
 
-- Remove `compat` plugin
-- Disable [no-unused-expressions](rules/best.practices.js#L7), [line-comment-position](rules/comments.js#18), [flowtype/type-import-style](rules/flow.js#L59), [flowtype/require-return-type](rules/flow.js#L114)
+- Disable `multiline-comment-style`, `react/default-props-match-prop-types`, `react/require-default-props`, `flowtype/no-unused-expressions`

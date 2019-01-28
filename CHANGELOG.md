@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [4.2.0] - 28 January 2019
+
+### Change
+
+- `promise/catch-or-return` to "warn"
+- `flowtype/type-id-match` no longer requires "Type" suffix 
+
+### Remove
+
+- Disable `multiline-comment-style`, `react/default-props-match-prop-types`, `react/require-default-props`, `flowtype/no-unused-expressions`
+
 ## [4.1.0] - 23 January 2019
 
 ### Remove
@@ -329,8 +340,9 @@ React support
     - Defined in [`error.js`](/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/leeruniek/eslint-rules/compare/v4.1.0...HEAD
+[Unreleased]: https://github.com/leeruniek/eslint-rules/compare/v4.2.0...HEAD
 
+[4.2.0]: https://github.com/leeruniek/eslint-rules/compare/v4.1.0...v4.2.0
 [4.1.0]: https://github.com/leeruniek/eslint-rules/compare/v4.0.0...v4.1.0
 [4.0.0]: https://github.com/leeruniek/eslint-rules/compare/v3.0.2...v4.0.0
 [3.0.2]: https://github.com/leeruniek/eslint-rules/compare/v3.0.0...v3.0.2
