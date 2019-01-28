@@ -38,6 +38,6 @@ module.exports = {
      * This rule aims to enforce a particular style for
      * multiline comments.
      */
-    "multiline-comment-style": ["error", "starred-block"],
+    "multiline-comment-style": "off",
   },
 }
