@@ -1,6 +1,6 @@
 {
   "name": "@leeruniek/eslint-config",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "JavaScript ESLint rules",
   "main": "targets/react.js",
   "homepage": "https://github.com/leeruniek/eslint-config",
