@@ -30,6 +30,8 @@ module.exports = {
     // does not play well with
     "react/default-props-match-prop-types": "off",
     "react/require-default-props": "off",
+    "react/display-name": "off",
+    "react/prop-types": "off",
 
     // Show flow errors
     "flowtype-errors/show-errors": "error",
