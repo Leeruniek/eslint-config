@@ -137,7 +137,7 @@ module.exports = {
     "flowtype/sort-keys": "off",
 
     // Enforces a consistent naming pattern for type aliases.
-    "flowtype/type-id-match": ["error", "/^([A-Z]{1,}[a-z0-9]{0,})+$/"],
+    "flowtype/type-id-match": ["error", "^([A-Z]{1,}[a-z0-9]{0,})+$"],
 
     /*
      * Marks Flow type alias declarations as used.
