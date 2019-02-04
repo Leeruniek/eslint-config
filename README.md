@@ -14,17 +14,17 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 
 ---
 
-<!-- MarkdownTOC levels="1,2,3" autolink="true" indent="    " -->
+<!-- vim-markdown-toc GFM -->
 
-- [Install](#install)
-- [Use](#use)
-- [Inside](#inside)
-- [Example config](#example-config)
-- [Changelog](#changelog)
-    - [4.1.0 - 23 January 2019](#410---23-january-2019)
-        - [Remove](#remove)
+* [Install](#install)
+* [Use](#use)
+* [Inside](#inside)
+* [Example config](#example-config)
+* [Changelog](#changelog)
+    * [4.2.1 - 4 February 2019](#421---4-february-2019)
+        * [Change](#change)
 
-<!-- /MarkdownTOC -->
+<!-- vim-markdown-toc -->
 
 ## Install
 
@@ -39,15 +39,15 @@ It should be something like this:
 ```javascript
 ...
 "devDependencies": {
-    "eslint": "^5.12.1",
-    "eslint-config-prettier": "^3.6.0",
-    "eslint-plugin-import": "^2.15.0",
-    "eslint-plugin-json": "^1.3.2",
-    "eslint-plugin-no-inferred-method-name": "^1.0.2",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-unicorn": "^7.1.0",
-    "prettier": "^1.16.1"
+    "eslint": "5.13.0",
+    "eslint-config-prettier": "4.0.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-json": "1.3.2",
+    "eslint-plugin-no-inferred-method-name": "1.0.2",
+    "eslint-plugin-promise": "4.0.1",
+    "eslint-plugin-prettier": "3.0.1",
+    "eslint-plugin-unicorn": "7.1.0",
+    "prettier": "1.16.4"
 }
 ...
 ```
@@ -145,13 +145,9 @@ Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-impor
 
 History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-config/blob/master/CHANGELOG.md)
 
-### 4.2.0 - 28 January 2019
+### 4.2.1 - 4 February 2019
 
 #### Change
 
-- `promise/catch-or-return` to "warn"
-- `flowtype/type-id-match` no longer requires "Type" suffix 
+- `react/no-multi-comp` to allow multiple stateless components in same file
 
-#### Remove
-
-- Disable `multiline-comment-style`, `react/default-props-match-prop-types`, `react/require-default-props`, `flowtype/no-unused-expressions`
