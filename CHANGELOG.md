@@ -9,10 +9,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [4.2.1] - 4 February 2019
+## [4.3] - 4 February 2019
+
+### Remove 
+
+- Disable `react/display-name`, `react-prop-types` when using flow 
 
 ### Change
 
+- Fix wrong value for `flow/type-id-match`
 - `react/no-multi-comp` to allow multiple stateless components in same file
 
 ## [4.2.0] - 28 January 2019
@@ -346,9 +351,9 @@ React support
     - Defined in [`error.js`](/rules/errors.js):
     - Current value: `"no-unexpected-multiline": "error"`
 
-[Unreleased]: https://github.com/leeruniek/eslint-rules/compare/v4.2.1...HEAD
+[Unreleased]: https://github.com/leeruniek/eslint-rules/compare/v4.3...HEAD
 
-[4.2.1]: https://github.com/leeruniek/eslint-rules/compare/v4.2.0...v4.2.1
+[4.3]: https://github.com/leeruniek/eslint-rules/compare/v4.2.0...v4.3
 [4.2.0]: https://github.com/leeruniek/eslint-rules/compare/v4.1.0...v4.2.0
 [4.1.0]: https://github.com/leeruniek/eslint-rules/compare/v4.0.0...v4.1.0
 [4.0.0]: https://github.com/leeruniek/eslint-rules/compare/v3.0.2...v4.0.0

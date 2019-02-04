@@ -21,8 +21,9 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 * [Inside](#inside)
 * [Example config](#example-config)
 * [Changelog](#changelog)
-    * [4.2.1 - 4 February 2019](#421---4-february-2019)
-        * [Change](#change)
+    * [4.3 - 4 February 2019](#43---4-february-2019)
+    * [Remove](#remove)
+    * [Change](#change)
 
 <!-- vim-markdown-toc -->
 
@@ -145,9 +146,14 @@ Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-impor
 
 History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-config/blob/master/CHANGELOG.md)
 
-### 4.2.1 - 4 February 2019
+### 4.3 - 4 February 2019
 
-#### Change
+### Remove 
 
+- Disable `react/display-name`, `react-prop-types` when using flow 
+
+### Change
+
+- Fix wrong value for `flow/type-id-match`
 - `react/no-multi-comp` to allow multiple stateless components in same file
 
