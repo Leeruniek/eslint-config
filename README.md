@@ -19,7 +19,7 @@ Other bundles: [XO](https://www.npmjs.com/package/xo), [eslint-config-airbnb](ht
 * [Install](#install)
 * [Use](#use)
 * [Inside](#inside)
-* [Example config](#example-config)
+    * [Example config](#example-config)
 * [Changelog](#changelog)
     * [4.3 - 4 February 2019](#43---4-february-2019)
     * [Remove](#remove)
@@ -80,16 +80,16 @@ npm install --save-dev eslint-plugin-flowtype eslint-plugin-flowtype-errors
 
 ## Inside
 
-- [eslint-plugin-import](https://www.npmjs.org/package/eslint-plugin-import) - Support for ES2015+ (ES6+) import/export syntax
-- [eslint-plugin-promise](https://www.npmjs.org/package/eslint-plugin-promise) - Enforce best practices for JavaScript promises
-- [eslint-plugin-unicorn](https://www.npmjs.org/package/eslint-plugin-unicorn) - Various awesome ESLint rules
-- [eslint-plugin-flowtype](https://www.npmjs.org/package/eslint-plugin-flowtype) - [Flow](https://flow.org) specific linting rules
-- [eslint-plugin-flowtype-errors](https://www.npmjs.org/package/eslint-plugin-flowtype-errors) - Runs your code through Flow and passes the type check errors as linting errors. Any editor that has ESLint support now supports Flow
-- [eslint-plugin-html](https://www.npmjs.org/package/eslint-plugin-html) - Allows linting and fixing inline scripts contained in HTML files
-- [eslint-plugin-react](https://www.npmjs.org/package/eslint-plugin-react) - React specific linting rules
-- [eslint-plugin-no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name) - In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead. This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
+* [eslint-plugin-import](https://www.npmjs.org/package/eslint-plugin-import) - Support for ES2015+ (ES6+) import/export syntax
+* [eslint-plugin-promise](https://www.npmjs.org/package/eslint-plugin-promise) - Enforce best practices for JavaScript promises
+* [eslint-plugin-unicorn](https://www.npmjs.org/package/eslint-plugin-unicorn) - Various awesome ESLint rules
+* [eslint-plugin-flowtype](https://www.npmjs.org/package/eslint-plugin-flowtype) - [Flow](https://flow.org) specific linting rules
+* [eslint-plugin-flowtype-errors](https://www.npmjs.org/package/eslint-plugin-flowtype-errors) - Runs your code through Flow and passes the type check errors as linting errors. Any editor that has ESLint support now supports Flow
+* [eslint-plugin-html](https://www.npmjs.org/package/eslint-plugin-html) - Allows linting and fixing inline scripts contained in HTML files
+* [eslint-plugin-react](https://www.npmjs.org/package/eslint-plugin-react) - React specific linting rules
+* [eslint-plugin-no-inferred-method-name](https://www.npmjs.org/package/eslint-plugin-no-inferred-method-name) - In ES6, compact methods and unnamed function expression assignments within object literals do not create a lexical identification (name) binding that corresponds to the function name identifier for recursion or event binding. The compact method syntax will not be an appropriate option for these types of solutions, and a named function expression should be used instead. This custom ESLint rule will identify instances where a function name is being called and a lexical identifier is unavailable within a compact object literal.
 
-## Example config
+### Example config
 
 Using [`babel-eslint`](https://github.com/babel/babel-eslint) and [`eslint-import-resolver-webpack`](https://www.npmjs.com/package/eslint-import-resolver-webpack)
 
@@ -148,12 +148,11 @@ History of all changes in [CHANGELOG.md](https://github.com/leeruniek/eslint-con
 
 ### 4.3 - 4 February 2019
 
-### Remove 
+### Remove
 
-- Disable `react/display-name`, `react-prop-types` when using flow 
+* Disable `react/display-name`, `react-prop-types` when using flow 
 
 ### Change
 
-- Fix wrong value for `flow/type-id-match`
-- `react/no-multi-comp` to allow multiple stateless components in same file
-
+* Fix wrong value for `flow/type-id-match`
+* `react/no-multi-comp` to allow multiple stateless components in same file

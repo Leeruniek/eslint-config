@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [4.3] - 4 February 2019
 
-### Remove 
+### Remove
 
 - Disable `react/display-name`, `react-prop-types` when using flow 
 
