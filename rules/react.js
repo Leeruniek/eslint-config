@@ -34,6 +34,9 @@ module.exports = {
     // Enforce ES5 or ES6 class for React Components
     "react/prefer-es6-class": "error",
 
+    // Declaring only one component per file improves readability and reusability of components.
+    "react/no-multi-comp": ["error", { ignoreStateless: true }],
+
     // Prevent definitions of unused prop types
     "react/no-unused-prop-types": "off",
 
@@ -176,12 +179,6 @@ module.exports = {
      * extend PureComponent.
      */
     "react/no-redundant-should-component-update": "error",
-
-    /*
-     * Declaring only one component per file improves readability and
-     * reusability of components.
-     */
-    "react/no-multi-comp": "error",
 
     /*
      * Updating the state after a component update will trigger a second
